@@ -258,6 +258,46 @@ p { margin: 0; text-wrap: pretty; }
 .tile:focus-visible { outline: none; }
 @keyframes march { to { stroke-dashoffset: -52; } }
 
+/* Projektliste mit schwebender Vorschau */
+.plist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.plist__item { border-bottom: 1px solid var(--line); }
+.plist__row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 2fr) minmax(0, 1.4fr) 24px; align-items: baseline; column-gap: clamp(16px, 2vw, 32px); padding: clamp(22px, 2.4vw, 34px) 0; text-decoration: none; position: relative; }
+.plist__thumb { display: none; }
+.plist__name { font-size: clamp(1.75rem, 1rem + 2.4vw, 3.25rem); font-weight: 500; font-stretch: 112%; letter-spacing: -0.03em; line-height: 1.05; transition: transform .5s var(--ease-out), color .35s var(--ease-out); }
+.plist__meta { font-size: var(--fs-small); color: var(--muted); transition: color .35s var(--ease-out); }
+.plist__meta--num { font-variant-numeric: tabular-nums; }
+.plist__arrow { width: 18px; height: 18px; align-self: center; opacity: .3; transition: transform .45s var(--ease-out), opacity .3s var(--ease-out); }
+.plist__row:focus-visible { outline-offset: -2px; }
+@media (hover: hover) {
+  .plist:hover .plist__name, .plist:focus-within .plist__name { color: rgba(20,21,21,.28); }
+  .plist:hover .plist__meta, .plist:focus-within .plist__meta { color: rgba(90,94,94,.5); }
+  .plist__row:hover .plist__name, .plist__row:focus-visible .plist__name { color: var(--ink); transform: translateX(14px); }
+  .plist__row:hover .plist__meta, .plist__row:focus-visible .plist__meta { color: var(--ink-soft); }
+  .plist__row:hover .plist__arrow, .plist__row:focus-visible .plist__arrow { opacity: 1; transform: translateX(4px); }
+}
+.plist__preview { position: fixed; left: 0; top: 0; z-index: 15; width: clamp(260px, 22vw, 360px); aspect-ratio: 3 / 2; pointer-events: none; opacity: 0; transform: translate3d(var(--x, 50vw), var(--y, 50vh), 0) translate(-50%, calc(-100% - 28px)); transition: opacity .35s var(--ease-out); will-change: transform; }
+.plist__preview.is-on { opacity: 1; }
+.plist__frame { width: 100%; height: 100%; overflow: hidden; clip-path: inset(50% 0 50% 0); transition: clip-path .55s var(--ease-in-out); box-shadow: 0 24px 48px -24px rgba(20,21,21,.35); }
+.plist__preview.is-on .plist__frame { clip-path: inset(0 0 0 0); }
+.plist__frame img { width: 100%; height: 100%; object-fit: cover; }
+.plist__frame img.swap { animation: swapIn .5s var(--ease-out); }
+@keyframes swapIn { from { clip-path: inset(0 0 100% 0); transform: scale(1.06); } to { clip-path: inset(0 0 0 0); transform: none; } }
+@media (hover: none), (max-width: 900px) {
+  .plist__preview { display: none; }
+  .plist__row { grid-template-columns: 1fr auto; row-gap: 6px; }
+  .plist__thumb { display: block; grid-column: 1 / -1; aspect-ratio: 3 / 2; overflow: hidden; margin-bottom: 14px; background: #e3e5e4; }
+  .plist__thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .7s var(--ease); }
+  .plist__item.is-colored .plist__thumb img { filter: none; }
+  .plist__name { grid-column: 1 / 2; font-size: clamp(1.6rem, 7vw, 2.25rem); }
+  .plist__arrow { grid-column: 2; grid-row: 2; opacity: .6; }
+  .plist__meta { grid-column: 1 / -1; }
+  .plist__meta + .plist__meta { margin-top: -4px; }
+}
+
+/* Riesige Wortmarke im Footer */
+.footer__giant { grid-column: 1 / -1; margin: clamp(24px, 4vw, 56px) 0 0; font-weight: 500; font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.045em; line-height: .8; font-size: 12vw; white-space: nowrap; justify-content: space-between; color: var(--ink); display: flex; overflow: hidden; padding-bottom: .04em; user-select: none; }
+.footer__giant span { display: block; }
+
 /* Services */
 .services { padding: var(--space-section) 0; background: var(--paper-raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .services__intro { max-width: 60ch; margin-top: 24px; color: var(--ink-soft); }
@@ -441,6 +481,13 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .js .tile.in .tile__media { clip-path: inset(0 0 0 0); }
   .js .tile.in .tile__media img { transform: scale(1.001); }
   .js .tile.in .tile__meta, .js .tile.in .tile__title { opacity: 1; transform: none; }
+
+  /* Projektliste */
+  .js .plist__item { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); transition-delay: calc(var(--i) * 80ms); }
+  .js .plist.in .plist__item { opacity: 1; transform: none; }
+  /* Footer-Wortmarke: Buchstaben steigen auf */
+  .js .footer__giant span { transform: translateY(102%); transition: transform 1.1s var(--ease-out); transition-delay: calc(var(--i) * 45ms); }
+  .js .footer__giant.in span { transform: none; }
 
   /* Leistungen: Linien werden gezogen */
   .js .service { position: relative; border-bottom-color: transparent; }
@@ -643,33 +690,60 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
         </a>
       </div>
-      <div class="project-grid">
-        <a class="tile" style="--i:0" href="projekte.html#projekt-m">
-          <div class="tile__media">
-            <img src="assets/img/projekt-m-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnbebauung mit Reihenhäusern, Gärten und zentralem Spielplatz aus der Vogelperspektive">
-          </div>
-          <svg class="tile__line" aria-hidden="true"><rect x="0.5" y="0.5" width="99.4%" height="99.4%"/></svg>
-          <p class="tile__meta">Reihenhäuser und Mehrfamilienhaus, 29 Wohneinheiten, in Planung</p>
-          <h3 class="tile__title"><span>Wohnbebauung M</span></h3>
-        </a>
-        <a class="tile" style="--i:1" href="projekte.html#projekt-s">
-          <div class="tile__media">
-            <img src="assets/img/projekt-s-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnstraße in Hanglage mit weißen kubischen Häusern und spielenden Kindern">
-          </div>
-          <svg class="tile__line" aria-hidden="true"><rect x="0.5" y="0.5" width="99.4%" height="99.4%"/></svg>
-          <p class="tile__meta">Städtebauliches Konzept, bis zu 56 Wohneinheiten, in Planung</p>
-          <h3 class="tile__title"><span>Baugebiet S</span></h3>
-        </a>
-        <a class="tile" style="--i:2" href="projekte.html#projekt-o">
-          <div class="tile__media">
-            <img src="assets/img/projekt-o-skizze.webp" width="1262" height="848" loading="lazy" alt="Skizze eines Mehrfamilienhauses mit umlaufenden Balkonen, Holzelementen und Außentreppe">
-          </div>
-          <svg class="tile__line" aria-hidden="true"><rect x="0.5" y="0.5" width="99.4%" height="99.4%"/></svg>
-          <p class="tile__meta">Nachverdichtung, 10 Wohneinheiten, in Ausführung</p>
-          <h3 class="tile__title"><span>Mehrfamilienhaus O</span></h3>
-        </a>
-      </div>
+      <ul class="plist" id="plist">
+        <li class="plist__item" style="--i:0">
+          <a class="plist__row" href="projekte.html#projekt-m" data-img="assets/img/projekt-m-visualisierung.webp">
+            <span class="plist__thumb"><img src="assets/img/projekt-m-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnbebauung mit Reihenhäusern, Gärten und zentralem Spielplatz aus der Vogelperspektive"></span>
+            <span class="plist__name">Wohnbebauung M</span>
+            <span class="plist__meta">Reihenhäuser und Mehrfamilienhaus</span>
+            <span class="plist__meta plist__meta--num">29 Wohneinheiten</span>
+            <span class="plist__meta">in Planung</span>
+            <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </li>
+        <li class="plist__item" style="--i:1">
+          <a class="plist__row" href="projekte.html#projekt-s" data-img="assets/img/projekt-s-visualisierung.webp">
+            <span class="plist__thumb"><img src="assets/img/projekt-s-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnstraße in Hanglage mit weißen kubischen Häusern"></span>
+            <span class="plist__name">Baugebiet S</span>
+            <span class="plist__meta">Städtebauliches Konzept</span>
+            <span class="plist__meta plist__meta--num">bis zu 56 Wohneinheiten</span>
+            <span class="plist__meta">in Planung</span>
+            <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </li>
+        <li class="plist__item" style="--i:2">
+          <a class="plist__row" href="projekte.html#projekt-o" data-img="assets/img/projekt-o-skizze.webp">
+            <span class="plist__thumb"><img src="assets/img/projekt-o-skizze.webp" width="1262" height="848" loading="lazy" alt="Skizze eines Mehrfamilienhauses mit umlaufenden Balkonen und Außentreppe"></span>
+            <span class="plist__name">Mehrfamilienhaus O</span>
+            <span class="plist__meta">Nachverdichtung</span>
+            <span class="plist__meta plist__meta--num">10 Wohneinheiten</span>
+            <span class="plist__meta">in Ausführung</span>
+            <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </li>
+        <li class="plist__item" style="--i:3">
+          <a class="plist__row" href="projekte.html#projekt-e" data-img="assets/img/projekt-e-skizze.webp">
+            <span class="plist__thumb"><img src="assets/img/projekt-e-skizze.webp" width="1232" height="864" loading="lazy" alt="Skizze eines Mehrfamilienhauses mit Flachdach und Holzfassade in Hanglage"></span>
+            <span class="plist__name">Mehrfamilienhaus E</span>
+            <span class="plist__meta">Hanglage</span>
+            <span class="plist__meta plist__meta--num">6 Wohneinheiten</span>
+            <span class="plist__meta">in Planung</span>
+            <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </li>
+        <li class="plist__item" style="--i:4">
+          <a class="plist__row" href="projekte.html#projekt-g" data-img="assets/img/projekt-g-visualisierung.webp">
+            <span class="plist__thumb"><img src="assets/img/projekt-g-visualisierung.webp" width="1201" height="908" loading="lazy" alt="Visualisierung eines weißen Mehrfamilienhauses mit Staffelgeschoss an einer Straße"></span>
+            <span class="plist__name">Mehrfamilienhaus G</span>
+            <span class="plist__meta">Wohnungsbau im Bebauungsplan</span>
+            <span class="plist__meta plist__meta--num">4 Wohneinheiten</span>
+            <span class="plist__meta">in Planung</span>
+            <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </li>
+      </ul>
     </div>
+    <div class="plist__preview" aria-hidden="true"><div class="plist__frame"><img alt="" src="assets/img/projekt-m-visualisierung.webp"></div></div>
   </section>
 
   <section class="services" id="leistungen" aria-labelledby="services-title">
@@ -893,6 +967,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
       <h3>Folgen</h3>
       <a href="https://www.instagram.com/al_architektur/" rel="noopener" target="_blank">Instagram</a>
     </div>
+    <div class="footer__giant" aria-hidden="true"><span style="--i:0">L</span><span style="--i:1">a</span><span style="--i:2">u</span><span style="--i:3">d</span><span style="--i:4">e</span><span style="--i:5">n</span><span style="--i:6">b</span><span style="--i:7">e</span><span style="--i:8">r</span><span style="--i:9">g</span></div>
     <div class="footer__legal">
       <span>© 2026 Anncathrin Laudenberg Architektur</span>
       <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
@@ -931,7 +1006,49 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   var reveal = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); reveal.unobserve(en.target); } });
   }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.tile, .service, .legend, .about__portrait').forEach(function (el) { reveal.observe(el); });
+  document.querySelectorAll('.tile, .service, .legend, .about__portrait, .plist, .footer__giant').forEach(function (el) { reveal.observe(el); });
+
+  var giant = document.querySelector('.footer__giant');
+  if (giant) {
+    var fit = function () {
+      giant.style.fontSize = '100px';
+      var w = 0; giant.querySelectorAll('span').forEach(function (sp) { w += sp.getBoundingClientRect().width; });
+      giant.style.fontSize = (100 * giant.clientWidth / w * 0.995) + 'px';
+    };
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(fit);
+    new ResizeObserver(fit).observe(giant.parentElement);
+  }
+
+  var preview = document.querySelector('.plist__preview');
+  var list = document.getElementById('plist');
+  if (preview && list && window.matchMedia('(hover: hover) and (min-width: 901px)').matches) {
+    var pimg = preview.querySelector('img');
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, current = '';
+    function tick() {
+      cx += (tx - cx) * 0.14; cy += (ty - cy) * 0.14;
+      preview.style.setProperty('--x', cx.toFixed(1) + 'px');
+      preview.style.setProperty('--y', cy.toFixed(1) + 'px');
+      raf = (Math.abs(tx - cx) > 0.3 || Math.abs(ty - cy) > 0.3) ? requestAnimationFrame(tick) : null;
+    }
+    function move(x, y) { tx = x; ty = y; if (!raf) raf = requestAnimationFrame(tick); }
+    function show(row) {
+      var src = row.getAttribute('data-img');
+      if (src !== current) { current = src; pimg.src = src; pimg.classList.remove('swap'); void pimg.offsetWidth; pimg.classList.add('swap'); }
+      preview.classList.add('is-on');
+    }
+    list.querySelectorAll('.plist__row').forEach(function (row) {
+      row.addEventListener('pointerenter', function (e) { if (!preview.classList.contains('is-on')) { cx = e.clientX; cy = e.clientY; } show(row); move(e.clientX, e.clientY); });
+      row.addEventListener('focus', function () { var r = row.getBoundingClientRect(); cx = tx = r.left + r.width * 0.55; cy = ty = r.top; tick(); show(row); });
+      row.addEventListener('blur', function () { preview.classList.remove('is-on'); });
+    });
+    list.addEventListener('pointermove', function (e) { move(e.clientX, e.clientY); });
+    list.addEventListener('pointerleave', function () { preview.classList.remove('is-on'); });
+  } else if (list) {
+    var io2 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle('is-colored', en.intersectionRatio > 0.6); });
+    }, { threshold: [0, 0.6, 1] });
+    list.querySelectorAll('.plist__item').forEach(function (it) { io2.observe(it); });
+  }
 
   var chain = document.getElementById('chain');
   new IntersectionObserver(function (entries, obs) {

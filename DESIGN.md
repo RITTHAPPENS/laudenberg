@@ -35,6 +35,8 @@ Black square monogram (AL line, white stroke) as header mark, footer mark and fa
 - Project tile: 3:2 image, grayscale by default, colour on hover/focus (touch: colour when 75% in view), meta line in muted, title with underline grow.
 - Planzeichen legend: 88px symbol box (text code, dashed line, dots, hatch, slope) plus heading and text.
 - Maßkette: horizontal dimension line with ticks for process steps; draws on scroll; vertical on ≤1024px.
+- Projektliste (Startseite): große Projektnamen als Zeilen mit Projektart, Wohneinheiten, Status; beim Hover dimmen die anderen Zeilen, die aktive rückt ein, und ein Vorschaubild folgt der Maus (oberhalb des Cursors, öffnet per clip-path). Touch und mobil: Vorschaubild in der Zeile, farbig sobald im Blick. Die Kachel-Komponente bleibt für die Projektseite.
+- Footer-Wortmarke: „LAUDENBERG“ randlos, per JS auf die Containerbreite eingepasst, Buchstaben steigen beim Erreichen nacheinander auf.
 - Buttons: square, 52px, solid ink or ghost; one contact label everywhere: "Projekt anfragen".
 - FAQ: details/summary with plus that rotates.
 - Contact block: the only dark section (closing), underline inputs, chip radios, all fields optional.
