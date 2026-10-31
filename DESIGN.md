@@ -44,7 +44,7 @@ Black square monogram (AL line, white stroke) as header mark, footer mark and fa
 ## Layout and motion
 
 12-column grid, max 1440px, gutter clamp(20px,4vw,56px), section spacing clamp(96px,12vw,176px). Square corners everywhere, lines instead of cards. Motion (ease-out cubic-bezier(.23,1,.32,1), ease-in-out cubic-bezier(.77,0,.175,1)):
-- Focal moment, the Lageplan is drawn: H1 (her claim) rises out of line masks; beside it an illustrative site plan draws itself: context hatching, Flurstück outline, Baugrenze (dash-dot, revealed through an animated mask), two Mehrfamilienhäuser and six Reihenhäuser grow from their base, trees, labels, north arrow and a Nutzungsschablone (WA, III, 0,4, 1,2, o, FD) follow. Labelled "Beispiel". A five-cell facts strip closes the hero.
+- Focal moment, the Ansicht is drawn: H1 rises out of line masks; behind it, right-weighted and faded to the left, an architectural elevation (Ansicht Süd, M 1:100) draws itself line by line: axes with circled labels, level lines, building, windows, balconies, trees, dimension chains and level markers. A cursor spotlight (Transparentpapier effect) reveals the drawing at full ink around the pointer on desktop. Mobile shows the drawing as a band above the H1. Five-cell facts strip closes the hero.
 - Statement words ink in with scroll (scroll-driven timeline, plain ink fallback).
 - Project images open as a plan cut (clip-path from bottom, slight zoom-out), staggered; Leistungen rules are drawn; legend symbols wipe in as a list; portrait uncovers.
 - Feedback: buttons and chips press to .97, FAQ opens with height transition, burger morphs into a cross, mobile menu wipes down with staggered link reveal.
