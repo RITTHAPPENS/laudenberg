@@ -20,6 +20,10 @@ Visual system of the Anncathrin Laudenberg Architektur website, documented from 
 - Geist Mono (OFL): only for measurements and plan labels (Nutzungsschablone keys, Maßkette numbers, form labels, captions).
 - Wordmark: caps, "ANNCATHRIN LAUDENBERG" weight 500 tracking .08em over "ARCHITEKTUR" weight 300.
 
+## Type scale
+
+One scale, used everywhere via tokens: --fs-label .75rem (mono labels), --fs-caption .8125rem, --fs-small .9375rem (nav, meta, step text), --fs-body 1.0625rem (all running text, 1rem mobile), --fs-lead (hero only), --fs-h3 1.25rem, --fs-h3-lg (service categories), --fs-h2, --fs-h2-xl (statement, contact), --fs-display (hero H1). No ad-hoc sizes outside the logo lockup.
+
 ## Logo
 
 Black square monogram (AL line, white stroke) as header mark, footer mark and favicon (favicon.svg). Path: M62 350 177 85l113 263h140 in a 480 box.
@@ -37,4 +41,9 @@ Black square monogram (AL line, white stroke) as header mark, footer mark and fa
 
 ## Layout and motion
 
-12-column grid, max 1440px, gutter clamp(20px,4vw,56px), section spacing clamp(96px,12vw,176px). Square corners everywhere, lines instead of cards. Motion: hero rise on load, tile hover (grayscale to colour + Baugrenze), Maßkette draw, logo stroke draw on hover; all disabled under prefers-reduced-motion.
+12-column grid, max 1440px, gutter clamp(20px,4vw,56px), section spacing clamp(96px,12vw,176px). Square corners everywhere, lines instead of cards. Motion (ease-out cubic-bezier(.23,1,.32,1), ease-in-out cubic-bezier(.77,0,.175,1)):
+- Focal moment, the plan is drawn: H1 lines rise out of masks, Nutzungsschablone wipes in left to right and its values follow, Baufenster frame wipes down, sketch is uncovered.
+- Statement words ink in with scroll (scroll-driven timeline, plain ink fallback).
+- Project images open as a plan cut (clip-path from bottom, slight zoom-out), staggered; Leistungen rules are drawn; legend symbols wipe in as a list; portrait uncovers.
+- Feedback: buttons and chips press to .97, FAQ opens with height transition, burger morphs into a cross, mobile menu wipes down with staggered link reveal.
+- Content stays visible without JS (.js gate); prefers-reduced-motion removes all movement.
