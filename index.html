@@ -206,14 +206,23 @@ p { margin: 0; text-wrap: pretty; }
 .nav__extra { display: none; }
 
 /* Hero */
-.hero { padding-top: clamp(40px, 6vw, 88px); padding-bottom: clamp(72px, 9vw, 128px); }
-.hero .grid { align-items: end; row-gap: 56px; }
+.hero { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(56px, 7vw, 96px); }
+.hero .grid { align-items: center; row-gap: 48px; }
 .hero__copy { grid-column: 1 / span 7; }
-.hero h1 { font-size: var(--fs-display); line-height: 1.0; letter-spacing: -0.035em; font-weight: 500; }
+.hero h1 { font-size: clamp(2.5rem, 1.2rem + 3.6vw, 4.5rem); line-height: 1.0; letter-spacing: -0.035em; font-weight: 500; }
 .hero h1 .line, .hero h1 .line > span { display: block; }
-.hero .lead { margin-top: clamp(24px, 2.6vw, 36px); }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(32px, 3.4vw, 48px); }
-.hero__plan { grid-column: 9 / span 4; }
+.hero .lead { margin-top: clamp(24px, 2.6vw, 36px); max-width: 50ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(32px, 3.4vw, 44px); }
+.lageplan { grid-column: 8 / span 5; margin: 0; }
+.lageplan svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lageplan figcaption { display: flex; justify-content: space-between; margin-top: 10px; color: var(--muted); font-size: var(--fs-label); border-top: 1px solid var(--line); padding-top: 10px; }
+.lp-label { font-size: 10px; }
+.lageplan:hover .lp-baugrenze { animation: march 2.4s linear infinite; }
+.hero__facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: clamp(8px, 2vw, 24px) 0 0; border-top: 1px solid var(--ink); }
+.hero__facts div { padding: 16px clamp(12px, 1.4vw, 20px) 0 0; border-right: 1px solid var(--line); margin-right: clamp(12px, 1.4vw, 20px); }
+.hero__facts div:last-child { border-right: 0; margin-right: 0; }
+.hero__facts dt { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.hero__facts dd { margin: 6px 0 0; font-weight: 500; font-stretch: 106%; font-size: var(--fs-body); line-height: 1.3; }
 
 /* Nutzungsschablone */
 .schablone { border: 1px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; background: var(--paper-raised); }
@@ -456,16 +465,20 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   @keyframes lineUp { to { transform: none; } }
   .js .soft { opacity: 0; filter: blur(6px); transform: translateY(10px); animation: softIn .9s var(--ease-out) forwards; animation-delay: calc(var(--d) * 1ms); }
   @keyframes softIn { to { opacity: 1; filter: blur(0); transform: none; } }
-  .js .schablone { clip-path: inset(0 100% 0 0); animation: wipeX 1.1s var(--ease-in-out) .35s forwards; }
-  @keyframes wipeX { to { clip-path: inset(0 0 0 0); } }
-  .js .schablone dd, .js .schablone dt { opacity: 0; transform: translateY(6px); animation: softIn .6s var(--ease-out) forwards; animation-delay: calc(var(--c) * 70ms + 900ms); }
-  .js .baufenster svg.bg { clip-path: inset(0 0 100% 0); animation: wipeY 1s var(--ease-in-out) 1.15s forwards; }
-  @keyframes wipeY { to { clip-path: inset(0 0 0 0); } }
-  .js .baufenster img { clip-path: inset(0 0 0 100%); animation: wipeImg 1.2s var(--ease-in-out) 1.45s forwards; }
-  @keyframes wipeImg { to { clip-path: inset(0 0 0 0); } }
-  .js .baufenster figcaption { opacity: 0; animation: softIn .6s var(--ease-out) 2.1s forwards; }
-  .baufenster svg.bg rect { animation: march 2.6s linear infinite; animation-play-state: paused; }
-  .baufenster:hover svg.bg rect { animation-play-state: running; }
+  .js .lp-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.4s var(--ease-in-out) forwards; }
+  .js .lp-draw--parcel { animation-delay: .3s; }
+  .js .lp-draw--bg { animation-duration: 1.3s; animation-delay: 1.1s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .js .lp-context { opacity: 0; animation: fadeIn .9s var(--ease-out) .2s forwards; }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .js .lp-blocks path { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); animation: grow .9s var(--ease-out) forwards; animation-delay: calc(var(--b) * 150ms + 2s); }
+  @keyframes grow { to { transform: scaleY(1); } }
+  .js .lp-trees circle { transform-box: fill-box; transform-origin: center; transform: scale(.4); opacity: 0; animation: pop .7s var(--ease-out) forwards; animation-delay: calc(var(--t) * 90ms + 2.4s); }
+  @keyframes pop { to { transform: none; opacity: 1; } }
+  .js .lp-roof { opacity: 0; animation: fadeIn .6s var(--ease-out) 2.75s forwards; }
+  .js .lp-annot > * { opacity: 0; animation: fadeIn .7s var(--ease-out) forwards; animation-delay: 2.6s; }
+  .js .lp-schablone { animation-delay: 2.8s !important; }
+  .js .lageplan figcaption { opacity: 0; animation: fadeIn .6s var(--ease-out) 2.9s forwards; }
 
   /* Statement: Wort für Wort mit dem Scrollen eingefärbt */
   @supports (animation-timeline: view()) {
@@ -516,8 +529,6 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 
 /* Responsive */
 @media (max-width: 1180px) {
-  .hero__copy { grid-column: 1 / span 7; }
-  .hero__plan { grid-column: 8 / span 5; }
   .nav__phone { display: none; }
 }
 @media (max-width: 1024px) {
@@ -567,8 +578,10 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   .nav .btn { justify-content: center; height: 56px; order: 3; opacity: 0; transform: translateY(8px); transition: opacity .4s var(--ease-out), transform .4s var(--ease-out), background-color .35s var(--ease); }
   .site-header.is-open .nav__extra, .site-header.is-open .nav .btn { opacity: 1; transform: none; transition-delay: .45s; }
   body.menu-open { overflow: hidden; }
-  .hero__copy, .hero__plan { grid-column: 1 / -1; }
-  .hero__plan { max-width: 560px; }
+  .hero__copy, .lageplan { grid-column: 1 / -1; }
+  .lageplan { max-width: 620px; }
+  .hero__facts { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
+  .hero__facts div { border-right: 0; margin-right: 0; }
   .statement h2, .statement p { grid-column: 1 / -1; }
   .project-grid { grid-template-columns: 1fr 1fr; }
   .project-grid .tile:nth-child(3) { grid-column: 1 / -1; }
@@ -589,7 +602,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 }
 @media (max-width: 640px) {
   :root { --fs-body: 1rem; --fs-small: 0.875rem; --fs-h3: 1.1875rem; }
-  :root { --fs-display: clamp(2.1rem, 9.2vw, 3.2rem); }
+  .hero h1 { font-size: clamp(2.1rem, 9.6vw, 3rem); }
   .hero__actions .btn { flex: 1 1 auto; justify-content: center; }
   .section-head { flex-direction: column; align-items: start; }
   .project-grid { grid-template-columns: 1fr; }
@@ -647,9 +660,9 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap grid">
       <div class="hero__copy">
-        <h1 id="hero-title"><span class="line" style="--i:0"><span>Architektur für</span></span> <span class="line" style="--i:1"><span>Wohnbau und</span></span> <span class="line" style="--i:2"><span>Projektentwicklung</span></span></h1>
-        <p class="lead soft" style="--d:480">Bebauungskonzepte und Genehmigungsplanung für Bauträger, Investoren und Projektentwickler im Raum Köln, Bonn und Bergisches Land.</p>
-        <div class="hero__actions soft" style="--d:620">
+        <h1 id="hero-title"><span class="line" style="--i:0"><span>Architektur beginnt</span></span> <span class="line" style="--i:1"><span>mit dem Potenzial</span></span> <span class="line" style="--i:2"><span>eines Ortes.</span></span></h1>
+        <p class="lead soft" style="--d:520">Architektin für Wohnbau und Projektentwicklung. Bebauungskonzepte und Genehmigungsplanung für Bauträger, Investoren und Projektentwickler im Raum Köln, Bonn und Bergisches Land.</p>
+        <div class="hero__actions soft" style="--d:660">
           <a class="btn btn--solid" href="#kontakt">Projekt anfragen
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>
           </a>
@@ -657,28 +670,89 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
         </div>
       </div>
 
-      <aside class="hero__plan" aria-label="Das Büro in Kennwerten">
-        <dl class="schablone">
-          <div style="--c:0"><dt>Schwerpunkt</dt><dd>Wohnbau</dd></div>
-          <div style="--c:1"><dt>Leistungsphasen</dt><dd>LPH 1 bis 4</dd></div>
-          <div style="--c:2"><dt>Planungsrecht</dt><dd>B-Plan und § 34</dd></div>
-          <div style="--c:3"><dt>Einstieg</dt><dd>In jeder Planungsphase</dd></div>
-          <div style="--c:4"><dt>Region</dt><dd>Köln, Bonn, Bergisches Land</dd></div>
-          <div style="--c:5"><dt>Kammer</dt><dd>AKNW</dd></div>
-        </dl>
-        <figure class="baufenster">
-          <svg class="bg" aria-hidden="true"><rect x="0.5" y="0.5" width="99.5%" height="99.5%" /></svg>
-          <img src="assets/img/projekt-e-skizze.webp" width="1232" height="864" alt="Skizze eines Mehrfamilienhauses mit Flachdach und Holzfassade in Hanglage" fetchpriority="high">
-          <figcaption class="mono"><span>Mehrfamilienhaus, Hanglage</span><span>in Planung</span></figcaption>
-        </figure>
-      </aside>
+      <figure class="lageplan" aria-label="Beispielhafter Lageplan: Grundstück, Baugrenze und Baukörper">
+        <svg viewBox="0 0 600 560" role="img" aria-hidden="true">
+          <defs>
+            <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#141515" stroke-width="0.8"/></pattern>
+            <mask id="bgMask" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="560">
+              <path class="lp-draw lp-draw--bg" d="M122 140 L472 116 L492 392 L112 410 Z" pathLength="1" fill="none" stroke="#fff" stroke-width="8"/>
+            </mask>
+          </defs>
+
+          <g class="lp-context">
+            <path d="M8 120 L52 116 L56 214 L10 218 Z" fill="url(#hatch)" stroke="#141515" stroke-width="0.8"/>
+            <path d="M6 262 L48 259 L52 360 L8 364 Z" fill="url(#hatch)" stroke="#141515" stroke-width="0.8"/>
+            <path d="M560 70 L596 68 L598 190 L563 192 Z" fill="url(#hatch)" stroke="#141515" stroke-width="0.8"/>
+            <path d="M566 252 L598 250 L599 352 L569 354 Z" fill="url(#hatch)" stroke="#141515" stroke-width="0.8"/>
+            <path d="M0 492 L600 470" stroke="#141515" stroke-width="0.8"/>
+            <path d="M0 530 L600 508" stroke="#141515" stroke-width="0.8"/>
+            <path d="M0 511 L600 489" stroke="#141515" stroke-width="0.6" stroke-dasharray="10 8"/>
+          </g>
+
+          <path class="lp-draw lp-draw--parcel" d="M72 92 L522 62 L546 446 L62 462 Z" pathLength="1" fill="none" stroke="#141515" stroke-width="1.6"/>
+
+          <path class="lp-baugrenze" d="M122 140 L472 116 L492 392 L112 410 Z" fill="none" stroke="#141515" stroke-width="1.3" stroke-dasharray="14 5 2 5" mask="url(#bgMask)"/>
+
+          <g class="lp-blocks" fill="#141515">
+            <path style="--b:0" d="M150 168 L286 159 L292 254 L156 263 Z"/>
+            <path style="--b:1" d="M322 156 L446 148 L452 240 L328 248 Z"/>
+            <path style="--b:2.00" d="M160.0 300.0 L205.2 297.1 L211.2 380.1 L166.0 383.0 Z"/>
+            <path style="--b:2.35" d="M212.2 296.6 L253.8 293.9 L259.8 376.9 L218.2 379.6 Z"/>
+            <path style="--b:2.70" d="M260.8 293.4 L302.5 290.7 L308.5 373.7 L266.8 376.4 Z"/>
+            <path style="--b:3.05" d="M309.5 290.3 L351.2 287.6 L357.2 370.6 L315.5 373.3 Z"/>
+            <path style="--b:3.40" d="M358.2 287.1 L399.8 284.4 L405.8 367.4 L364.2 370.1 Z"/>
+            <path style="--b:3.75" d="M406.8 283.9 L452.0 281.0 L458.0 364.0 L412.8 366.9 Z"/>
+          </g>
+          <g class="lp-roof" fill="none" stroke="#fafbfa" stroke-width="1.1">
+            <path d="M172 184 L266 178 L270 238 L176 244 Z"/>
+            <path d="M342 172 L428 166 L432 224 L346 230 Z"/>
+          </g>
+
+          <g class="lp-trees" fill="none" stroke="#141515" stroke-width="0.9">
+            <circle style="--t:0" cx="100" cy="430" r="12"/>
+            <circle style="--t:1" cx="512" cy="96" r="14"/>
+            <circle style="--t:2" cx="512" cy="420" r="10"/>
+            <circle style="--t:3" cx="215" cy="434" r="9"/>
+          </g>
+
+          <g class="lp-annot" font-family="Geist Mono, ui-monospace, monospace" font-size="11" fill="#141515">
+            <g class="lp-dim">
+              <path d="M62 482 L546 466" stroke="#141515" stroke-width="0.8"/>
+              <path d="M62 476 L62 488 M546 460 L546 472" stroke="#141515" stroke-width="0.8"/>
+              <path d="M58 486 L66 478 M542 470 L550 462" stroke="#141515" stroke-width="1.2"/>
+            </g>
+            <text class="lp-label" x="300" y="146" transform="rotate(-3.9 300 146)" text-anchor="middle" letter-spacing=".08em">BAUGRENZE</text>
+            <text class="lp-label" x="80" y="84" transform="rotate(-3.8 80 84)" letter-spacing=".08em">FLURSTÜCK</text>
+            <g class="lp-north" transform="translate(560 26)">
+              <circle r="14" fill="none" stroke="#141515" stroke-width="0.8"/>
+              <path d="M0 -10 L5 7 L0 3 L-5 7 Z"/>
+            </g>
+            <g class="lp-schablone" transform="translate(326 408) rotate(-2.2)" font-size="9.5">
+              <rect width="84" height="39" fill="#fafbfa" stroke="#141515" stroke-width="0.9"/>
+              <path d="M42 0 V39 M0 13 H84 M0 26 H84" stroke="#141515" stroke-width="0.9"/>
+              <text x="21" y="10" text-anchor="middle">WA</text><text x="63" y="10" text-anchor="middle">III</text>
+              <text x="21" y="23" text-anchor="middle">0,4</text><text x="63" y="23" text-anchor="middle">1,2</text>
+              <text x="21" y="36" text-anchor="middle">o</text><text x="63" y="36" text-anchor="middle">FD</text>
+            </g>
+          </g>
+        </svg>
+        <figcaption class="mono"><span>Lageplan</span><span>Beispiel</span></figcaption>
+      </figure>
+
+      <dl class="hero__facts soft" style="--d:1700">
+        <div><dt>Schwerpunkt</dt><dd>Wohnbau und Projektentwicklung</dd></div>
+        <div><dt>Leistungsphasen</dt><dd>LPH 1 bis 4</dd></div>
+        <div><dt>Planungsrecht</dt><dd>B-Plan und § 34 BauGB</dd></div>
+        <div><dt>Region</dt><dd>Köln, Bonn, Bergisches Land</dd></div>
+        <div><dt>Kammer</dt><dd>AKNW</dd></div>
+      </dl>
     </div>
   </section>
 
   <section class="statement" aria-labelledby="statement-title">
     <div class="wrap grid">
-      <h2 id="statement-title">Architektur beginnt mit dem Potenzial eines Ortes.</h2>
-      <p>Vom ersten Bebauungskonzept über die Abstimmung mit Kommunen und Fachbehörden bis zur genehmigungsreifen Planung entstehen Wohnbauprojekte, die wirtschaftlich durchdacht, planungsrechtlich fundiert und architektonisch überzeugend sind. Für Mehrfamilienhäuser, Reihen- und Doppelhäuser ebenso wie für ganze Baugebiete.</p>
+      <h2 id="statement-title">Wohnbau, der wirtschaftlich, planungsrechtlich und gestalterisch trägt.</h2>
+      <p>Vom ersten Bebauungskonzept über die Abstimmung mit Kommunen und Fachbehörden bis zur genehmigungsreifen Planung. Für Mehrfamilienhäuser, Reihen- und Doppelhäuser ebenso wie für ganze Baugebiete, innerhalb bestehender Bebauungspläne oder mit begleitetem Bauleitplanverfahren.</p>
     </div>
   </section>
 
