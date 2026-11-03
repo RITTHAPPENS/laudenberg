@@ -10,7 +10,7 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Anncathrin Laudenberg Architektur | Wohnbau und Projektentwicklung">
 <meta property="og:description" content="Bebauungskonzepte und Genehmigungsplanung für Bauträger und Investoren im Raum Köln, Bonn und Bergisches Land.">
-<meta property="og:image" content="assets/img/projekt-s-visualisierung.webp">
+<meta property="og:image" content="assets/img/projekt-scherbusch-hennef-visualisierung.webp">
 <meta name="theme-color" content="#f3f4f3">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add("js")</script>
@@ -293,11 +293,19 @@ p { margin: 0; text-wrap: pretty; }
   .plist:hover .plist__meta, .plist:focus-within .plist__meta { color: rgba(90,94,94,.5); }
   .plist__row:hover .plist__name, .plist__row:focus-visible .plist__name { color: var(--ink); transform: translateX(14px); }
   .plist__row:hover .plist__meta, .plist__row:focus-visible .plist__meta { color: var(--ink-soft); }
+  .plist__row:hover .plist__place, .plist__row:focus-visible .plist__place { color: var(--ink-soft); transform: translateX(14px); }
   .plist__row:hover .plist__arrow, .plist__row:focus-visible .plist__arrow { opacity: 1; transform: translateX(4px); }
 }
-.plist__preview { position: fixed; left: 0; top: 0; z-index: 15; width: clamp(260px, 22vw, 360px); aspect-ratio: 3 / 2; pointer-events: none; opacity: 0; transform: translate3d(var(--x, 50vw), var(--y, 50vh), 0) translate(-50%, calc(-100% - 28px)); transition: opacity .35s var(--ease-out); will-change: transform; }
+.plist__title { display: grid; gap: 8px; min-width: 0; }
+.plist__name { hyphens: manual; overflow-wrap: anywhere; }
+.plist__place { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); transition: color .35s var(--ease-out), transform .5s var(--ease-out); }
+.plist__meta abbr { text-decoration: none; cursor: help; }
+.plist__ki { display: block; margin-top: 8px; font-family: var(--mono); font-size: var(--fs-label); letter-spacing: 0.04em; color: var(--muted); }
+.plist__preview .plist__ki { margin: 0; padding: 8px 10px; background: var(--paper); color: var(--ink-soft); opacity: 0; transition: opacity .3s var(--ease-out) .25s; }
+.plist__preview.is-on .plist__ki { opacity: 1; }
+.plist__preview { position: fixed; left: 0; top: 0; z-index: 15; width: clamp(260px, 22vw, 360px); pointer-events: none; opacity: 0; transform: translate3d(var(--x, 50vw), var(--y, 50vh), 0) translate(-50%, calc(-100% - 64px)); transition: opacity .35s var(--ease-out); will-change: transform; }
 .plist__preview.is-on { opacity: 1; }
-.plist__frame { width: 100%; height: 100%; overflow: hidden; clip-path: inset(50% 0 50% 0); transition: clip-path .55s var(--ease-in-out); box-shadow: 0 24px 48px -24px rgba(20,21,21,.35); }
+.plist__frame { width: 100%; aspect-ratio: 3 / 2; overflow: hidden; clip-path: inset(50% 0 50% 0); transition: clip-path .55s var(--ease-in-out); box-shadow: 0 24px 48px -24px rgba(20,21,21,.35); }
 .plist__preview.is-on .plist__frame { clip-path: inset(0 0 0 0); }
 .plist__frame img { width: 100%; height: 100%; object-fit: cover; }
 .plist__frame img.swap { animation: swapIn .5s var(--ease-out); }
@@ -305,10 +313,11 @@ p { margin: 0; text-wrap: pretty; }
 @media (hover: none), (max-width: 900px) {
   .plist__preview { display: none; }
   .plist__row { grid-template-columns: 1fr auto; row-gap: 6px; }
-  .plist__thumb { display: block; grid-column: 1 / -1; aspect-ratio: 3 / 2; overflow: hidden; margin-bottom: 14px; background: #e3e5e4; }
-  .plist__thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .7s var(--ease); }
+  .plist__thumb { display: block; grid-column: 1 / -1; margin-bottom: 14px; }
+  .plist__thumb img { width: 100%; aspect-ratio: 3 / 2; background: #e3e5e4; object-fit: cover; filter: grayscale(1); transition: filter .7s var(--ease); }
   .plist__item.is-colored .plist__thumb img { filter: none; }
-  .plist__name { grid-column: 1 / 2; font-size: clamp(1.6rem, 7vw, 2.25rem); }
+  .plist__title { grid-column: 1 / 2; }
+  .plist__name { font-size: clamp(1.6rem, 7vw, 2.25rem); }
   .plist__arrow { grid-column: 2; grid-row: 2; opacity: .6; }
   .plist__meta { grid-column: 1 / -1; }
   .plist__meta + .plist__meta { margin-top: -4px; }
@@ -1012,58 +1021,58 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
       </div>
       <ul class="plist" id="plist">
         <li class="plist__item" style="--i:0">
-          <a class="plist__row" href="projekte.html#projekt-m" data-img="assets/img/projekt-m-visualisierung.webp">
-            <span class="plist__thumb"><img src="assets/img/projekt-m-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnbebauung mit Reihenhäusern, Gärten und zentralem Spielplatz aus der Vogelperspektive"></span>
-            <span class="plist__name">Wohnbebauung M</span>
-            <span class="plist__meta">Reihenhäuser und Mehrfamilienhaus</span>
-            <span class="plist__meta plist__meta--num">29 Wohneinheiten</span>
-            <span class="plist__meta">in Planung</span>
+          <a class="plist__row" href="projekte.html#eilenberg" data-img="assets/img/projekt-eilenberg-neustadt-wied-skizze.webp" data-ki="Eigene Skizze, KI-nachbearbeitet">
+            <span class="plist__thumb"><img src="assets/img/projekt-eilenberg-neustadt-wied-skizze.webp" width="1232" height="864" loading="lazy" alt="Skizze eines Mehrfamilienwohnhauses mit Flachdach, Holzelementen und umlaufenden Balkonen in Hanglage, Projekt Eilenberg in Neustadt (Wied)"><span class="plist__ki">Eigene Skizze, KI-nachbearbeitet</span></span>
+            <span class="plist__title"><span class="plist__name">Eilenberg</span><span class="plist__place">Neustadt (Wied)</span></span>
+            <span class="plist__meta">Mehrfamilienwohnhaus</span>
+            <span class="plist__meta plist__meta--num">6 Wohneinheiten</span>
+            <span class="plist__meta">Leistungsphase 2</span>
             <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </li>
         <li class="plist__item" style="--i:1">
-          <a class="plist__row" href="projekte.html#projekt-s" data-img="assets/img/projekt-s-visualisierung.webp">
-            <span class="plist__thumb"><img src="assets/img/projekt-s-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnstraße in Hanglage mit weißen kubischen Häusern"></span>
-            <span class="plist__name">Baugebiet S</span>
-            <span class="plist__meta">Städtebauliches Konzept</span>
-            <span class="plist__meta plist__meta--num">bis zu 56 Wohneinheiten</span>
-            <span class="plist__meta">in Planung</span>
+          <a class="plist__row" href="projekte.html#goethestrasse" data-img="assets/img/projekt-goethestrasse-siegburg-visualisierung.webp" data-ki="KI-Visualisierung">
+            <span class="plist__thumb"><img src="assets/img/projekt-goethestrasse-siegburg-visualisierung.webp" width="1201" height="908" loading="lazy" alt="Visualisierung eines weißen Mehrfamilienwohnhauses mit Staffelgeschoss an der Goethestraße in Siegburg"><span class="plist__ki">KI-Visualisierung</span></span>
+            <span class="plist__title"><span class="plist__name">Goethestraße</span><span class="plist__place">Siegburg</span></span>
+            <span class="plist__meta">Mehrfamilienwohnhaus</span>
+            <span class="plist__meta plist__meta--num">4 Wohneinheiten</span>
+            <span class="plist__meta">Leistungsphase 4</span>
             <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </li>
         <li class="plist__item" style="--i:2">
-          <a class="plist__row" href="projekte.html#projekt-o" data-img="assets/img/projekt-o-skizze.webp">
-            <span class="plist__thumb"><img src="assets/img/projekt-o-skizze.webp" width="1262" height="848" loading="lazy" alt="Skizze eines Mehrfamilienhauses mit umlaufenden Balkonen und Außentreppe"></span>
-            <span class="plist__name">Mehrfamilienhaus O</span>
-            <span class="plist__meta">Nachverdichtung</span>
+          <a class="plist__row" href="projekte.html#glockengiesserstrasse" data-img="assets/img/projekt-glockengiesserstrasse-overath-skizze.webp" data-ki="Visualisierung KI-unterstützt">
+            <span class="plist__thumb"><img src="assets/img/projekt-glockengiesserstrasse-overath-skizze.webp" width="1262" height="848" loading="lazy" alt="Skizze eines Mehrfamilienwohnhauses mit Balkonen und Außentreppe an der Glockengießerstraße in Overath"><span class="plist__ki">Visualisierung KI-unterstützt</span></span>
+            <span class="plist__title"><span class="plist__name">Glocken&shy;gießer&shy;straße</span><span class="plist__place">Overath</span></span>
+            <span class="plist__meta">Mehrfamilienwohnhaus</span>
             <span class="plist__meta plist__meta--num">10 Wohneinheiten</span>
             <span class="plist__meta">in Ausführung</span>
             <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </li>
         <li class="plist__item" style="--i:3">
-          <a class="plist__row" href="projekte.html#projekt-e" data-img="assets/img/projekt-e-skizze.webp">
-            <span class="plist__thumb"><img src="assets/img/projekt-e-skizze.webp" width="1232" height="864" loading="lazy" alt="Skizze eines Mehrfamilienhauses mit Flachdach und Holzfassade in Hanglage"></span>
-            <span class="plist__name">Mehrfamilienhaus E</span>
-            <span class="plist__meta">Hanglage</span>
-            <span class="plist__meta plist__meta--num">6 Wohneinheiten</span>
-            <span class="plist__meta">in Planung</span>
+          <a class="plist__row" href="projekte.html#menden" data-img="assets/img/projekt-menden-sankt-augustin-visualisierung.webp" data-ki="KI-Visualisierung">
+            <span class="plist__thumb"><img src="assets/img/projekt-menden-sankt-augustin-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung des Plangebiets Menden in Sankt Augustin mit Einfamilienhäusern, Gärten und zentralem Spielplatz aus der Vogelperspektive"><span class="plist__ki">KI-Visualisierung</span></span>
+            <span class="plist__title"><span class="plist__name">Menden</span><span class="plist__place">Sankt Augustin</span></span>
+            <span class="plist__meta">Wohnbebauung Plangebiet</span>
+            <span class="plist__meta plist__meta--num"><abbr title="Einfamilienhäuser">25 EFH</abbr>, <abbr title="Mehrfamilienhaus">1 MFH</abbr> mit 4 WE</span>
+            <span class="plist__meta">Leistungsphase 2</span>
             <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </li>
         <li class="plist__item" style="--i:4">
-          <a class="plist__row" href="projekte.html#projekt-g" data-img="assets/img/projekt-g-visualisierung.webp">
-            <span class="plist__thumb"><img src="assets/img/projekt-g-visualisierung.webp" width="1201" height="908" loading="lazy" alt="Visualisierung eines weißen Mehrfamilienhauses mit Staffelgeschoss an einer Straße"></span>
-            <span class="plist__name">Mehrfamilienhaus G</span>
-            <span class="plist__meta">Wohnungsbau im Bebauungsplan</span>
-            <span class="plist__meta plist__meta--num">4 Wohneinheiten</span>
-            <span class="plist__meta">in Planung</span>
+          <a class="plist__row" href="projekte.html#scherbusch" data-img="assets/img/projekt-scherbusch-hennef-visualisierung.webp" data-ki="KI-Visualisierung">
+            <span class="plist__thumb"><img src="assets/img/projekt-scherbusch-hennef-visualisierung.webp" width="1800" height="1012" loading="lazy" alt="Visualisierung einer Wohnstraße mit weißen kubischen Häusern, städtebauliche Konzeptplanung Scherbusch in Hennef"><span class="plist__ki">KI-Visualisierung</span></span>
+            <span class="plist__title"><span class="plist__name">Scherbusch</span><span class="plist__place">Hennef</span></span>
+            <span class="plist__meta">Städtebauliche Konzeptplanung</span>
+            <span class="plist__meta plist__meta--num"><abbr title="Einfamilienhäuser">13 EFH</abbr>, <abbr title="Doppelhaushälften">10 DHH</abbr>, <abbr title="Mehrfamilienhäuser">4 MFH</abbr></span>
+            <span class="plist__meta">Leistungsphase 2</span>
             <svg class="plist__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
           </a>
         </li>
       </ul>
     </div>
-    <div class="plist__preview" aria-hidden="true"><div class="plist__frame"><img alt="" src="assets/img/projekt-m-visualisierung.webp"></div></div>
+    <div class="plist__preview" aria-hidden="true"><div class="plist__frame"><img alt="" src="assets/img/projekt-eilenberg-neustadt-wied-skizze.webp"></div><span class="plist__ki"></span></div>
   </section>
 
   <section class="services" id="leistungen" aria-labelledby="services-title">
@@ -1359,7 +1368,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   var preview = document.querySelector('.plist__preview');
   var list = document.getElementById('plist');
   if (preview && list && window.matchMedia('(hover: hover) and (min-width: 901px)').matches) {
-    var pimg = preview.querySelector('img');
+    var pimg = preview.querySelector('img'), pki = preview.querySelector('.plist__ki');
     var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, current = '';
     function tick() {
       cx += (tx - cx) * 0.14; cy += (ty - cy) * 0.14;
@@ -1371,6 +1380,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
     function show(row) {
       var src = row.getAttribute('data-img');
       if (src !== current) { current = src; pimg.src = src; pimg.classList.remove('swap'); void pimg.offsetWidth; pimg.classList.add('swap'); }
+      if (pki) pki.textContent = row.getAttribute('data-ki') || '';
       preview.classList.add('is-on');
     }
     list.querySelectorAll('.plist__row').forEach(function (row) {
@@ -1388,7 +1398,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   }
 
   var chain = document.getElementById('chain');
-  new IntersectionObserver(function (entries, obs) {
+  if (chain) new IntersectionObserver(function (entries, obs) {
     entries.forEach(function (en) { if (en.isIntersecting) { chain.classList.add('is-drawn'); obs.disconnect(); } });
   }, { threshold: 0.35 }).observe(chain);
 
@@ -1400,8 +1410,8 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
   }
 
   var form = document.getElementById('anfrage');
-  var status = form.querySelector('.form__status');
-  form.addEventListener('submit', function (ev) {
+  var status = form && form.querySelector('.form__status');
+  if (form) form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var mail = form.querySelector('#f-mail');
     if (mail.value.trim() && !mail.checkValidity()) {

@@ -50,7 +50,14 @@ Zusammenarbeit beginnt in unterschiedlichen Planungsphasen. Ablauf laut Kundin: 
 ## Evidence on Hand
 
 - Porträt- und Arbeitsfotos der Kundin (Fotografin unbekannt, Nutzung freigegeben), Foto des Hundes Gyors.
-- Fünf Projekte mit eigenen Visualisierungen und Skizzen (teils KI-unterstützt): M (29 WE, Reihenhäuser und MFH, Spielplatz, in Planung), E (MFH 6 WE, Hanglage, in Planung), S (städtebauliches Konzept, 27 Gebäude, bis 56 WE, Hanglage, in Planung), G (MFH 4 WE, in Planung), O (MFH 10 WE, Nachverdichtung, Baugenehmigung liegt vor, in Ausführung). Bildzuordnung noch von der Kundin zu bestätigen; Orte und Flächen noch offen.
+- Fünf Projekte (Reihenfolge laut Kundin), alle LPH 1 bis 4:
+  - Eilenberg, Neustadt (Wied): Mehrfamilienwohnhaus, 6 WE, Status LPH 2. Eigene Skizze, KI-nachbearbeitet.
+  - Goethestraße, Siegburg: Mehrfamilienwohnhaus, 4 WE, Status LPH 4. KI-Visualisierung, Apple-Karten-Ausschnitt.
+  - Glockengießerstraße, Overath: Mehrfamilienwohnhaus, 10 WE, in Ausführung. KI-Visualisierung, eigenes Bestandsfoto KI-bearbeitet.
+  - Menden, Sankt Augustin: Wohnbebauung Plangebiet, 25 EFH und 1 MFH mit 4 WE, Status LPH 2. KI-Visualisierungen.
+  - Scherbusch, Hennef: Städtebauliche Konzeptplanung, 13 EFH, 10 DHH, 4 MFH, Status LPH 2. KI-Visualisierungen, Apple-Karten-Ausschnitt.
+- Weitere Projektbilder liegen im Google-Drive-Ordner der Kundin, noch nicht im Prototyp.
+- Impressum-Daten liegen vor (impressum.html). AKNW-Mitgliedsnummer bewusst nicht veröffentlichen.
 - Keine Testimonials, keine Kundennamen, keine Kennzahlen über die genannten Projektgrößen hinaus. Nichts davon erfinden.
 
 ## Product Principles
