@@ -29,7 +29,11 @@ Zusammenarbeit beginnt in unterschiedlichen Planungsphasen. Ablauf laut Kundin: 
 ## Capabilities and Constraints
 
 - Seitenumfang (Vertrag, Business-Paket): Startseite, Projekte, Leistungen, Büro / Über mich, Kontakt, plus Impressum und Datenschutz.
-- Projekte: Übersicht im Kachelraster (Vorbild gmp.de), Bilder schwarz-weiß, farbig bei Hover; Klick öffnet Detailansicht als Overlay, keine Unterseiten je Projekt. Felder: Ort, Projektart, Anzahl Wohneinheiten, Fläche, Leistungsphasen, Status. KI-unterstützte Visualisierungen werden dezent unter dem Bild gekennzeichnet (nicht im Bild, nicht im Impressum).
+- Korrektur 04.11.2026: Startseite bewusst reduziert auf Foto-Hero (ihr Foto aus der alten Website, schwarz-weiß, weich ausgeblendet) mit H1 „Architektur beginnt mit dem Potenzial eines Ortes.“ plus Abschnitt Über mich. Keine Projekte, kein Grundstücks-Check, kein Ablauf, keine Kennwerte-Leiste, keine Infokästchen. FAQ auf Leistungen, Kontaktbereich auf Kontakt („Sie planen ein Projekt?“), Gyors auf Büro.
+- Vollständige Anschrift nur im Impressum (Homeoffice, keine Geschäftsräume).
+- Logo: Zeile „Architektur“ exakt so breit wie „Anncathrin Laudenberg“ (wie Originallogo), in Header und Footer. Keine große Wortmarke im Footer.
+- Dezentes schwarz-weißes Instagram-Icon in der Menüleiste.
+- Projekte: Übersicht im Kachelraster (Vorbild gmp.de), Bilder schwarz-weiß, farbig bei Hover; Klick öffnet Detailansicht als Overlay, keine Unterseiten je Projekt. Kachel zeigt nur Projektname und Projektart, je drei nebeneinander. Detail: Ort, Projektart, Umfang, Leistungsphasen (insgesamt bearbeitet), kein Bearbeitungsstand. KI-unterstützte Visualisierungen werden dezent unter dem Bild gekennzeichnet (nicht im Bild, nicht im Impressum).
 - Leistungsreihenfolge: Objektplanung, dann Projektentwicklung & Konzeption, dann ergänzende Leistungen.
 - Ansprache: Ich-Form im Bereich Über mich, sonst neutral-professionell. Keine Wir-Form.
 - Kontaktformular: Name, E-Mail, Telefon, Firma, Ich bin (Bauträger, Investor, Projektentwickler, privat), Ort des Grundstücks, Beschreibung. Alle Felder freiwillig. Anfragen an info@laudenberg-architektur.de. Telefon 0157 89195072.
