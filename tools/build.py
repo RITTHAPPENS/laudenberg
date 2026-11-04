@@ -171,7 +171,7 @@ HERO = f'''
     <div class="wrap grid">
       <div class="hero__copy">
         <h1 id="hero-title"><span class="line" style="--i:0"><span>Architektur beginnt</span></span> <span class="line" style="--i:1"><span>mit dem Potenzial</span></span> <span class="line" style="--i:2"><span>eines Ortes.</span></span></h1>
-        <p class="lead soft" style="--d:560">Individuelle Konzepte für Wohnungsbau und Projektentwicklung: wirtschaftlich durchdacht, planungsrechtlich fundiert und architektonisch überzeugend.</p>
+        <p class="lead soft" style="--d:560">Individuelle Konzepte für Wohnungsbau und Projektentwicklung – wirtschaftlich durchdacht, planungsrechtlich fundiert und architektonisch überzeugend.</p>
         <div class="hero__actions soft" style="--d:700">
           <a class="btn btn--solid" href="kontakt.html">Projekt anfragen
             {ARROW}

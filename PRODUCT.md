@@ -39,7 +39,7 @@ Zusammenarbeit beginnt in unterschiedlichen Planungsphasen. Ablauf laut Kundin: 
 - Kontaktformular: Name, E-Mail, Telefon, Firma, Ich bin (Bauträger, Investor, Projektentwickler, privat), Ort des Grundstücks, Beschreibung. Alle Felder freiwillig. Anfragen an info@laudenberg-architektur.de. Telefon 0157 89195072.
 - Instagram nur verlinken (instagram.com/al_architektur). Keine weiteren Social-Profile.
 - Keine Grundrisse veröffentlichen.
-- Keine Gedankenstriche in Texten (Kundenwunsch über Agentur).
+- Keine Gedankenstriche in Texten, die von uns stammen. Formulierungen, die die Kundin selbst liefert, bleiben wörtlich, inklusive Gedankenstrich.
 - Texte SEO-optimiert (Region und Wohnbau-Themen), geografische Ausrichtung bewusst offen.
 
 ## Brand Commitments
