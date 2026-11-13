@@ -10,6 +10,9 @@ P = ROOT / 'tools' / 'partials'
 part = lambda n: (P / n).read_text(encoding='utf-8')
 
 SITE = 'https://www.laudenberg-architektur.de/'
+import hashlib
+# Cache-Busting: Versionsparameter aus dem Inhalt, damit Browser nach jeder Änderung neu laden
+ASSET_V = hashlib.md5((ROOT / 'assets/site.css').read_bytes() + (ROOT / 'assets/site.js').read_bytes()).hexdigest()[:8]
 ARROW = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>'
 IG = ('<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></svg>')
 IG_URL = 'https://www.instagram.com/al_architektur/'
@@ -57,7 +60,7 @@ def head(title, desc, path, extra=''):
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preload" href="assets/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v={ASSET_V}">
 {extra}</head>
 <body>
 
@@ -128,7 +131,7 @@ def footer(path):
   </div>
 </footer>
 
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v={ASSET_V}" defer></script>
 </body>
 </html>
 '''
