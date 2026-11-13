@@ -13,6 +13,8 @@ SITE = 'https://www.laudenberg-architektur.de/'
 ARROW = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.3"/></svg>'
 IG = ('<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></svg>')
 IG_URL = 'https://www.instagram.com/al_architektur/'
+LI = ('<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,26H40A14,14,0,0,0,26,40V216a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V40A14,14,0,0,0,216,26Zm2,190a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V40a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM94,112v64a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0Zm88,28v36a6,6,0,0,1-12,0V140a22,22,0,0,0-44,0v36a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0v2.11A34,34,0,0,1,182,140ZM98,84A10,10,0,1,1,88,74,10,10,0,0,1,98,84Z"/></svg>')
+LI_URL = 'https://www.linkedin.com/in/anncathrin-laudenberg-b22871449/'
 MARK = '<svg class="brand__mark" viewBox="0 0 480 480" aria-hidden="true"><rect width="480" height="480"/><path d="M62 350 177 85l113 263h140"/></svg>'
 # Wortmarke: beide Zeilen per textLength exakt auf dieselbe Breite gesetzt (wie Originallogo)
 WORDMARK = ('<svg class="brand__type" viewBox="0 0 240 45" aria-hidden="true">'
@@ -33,7 +35,7 @@ LD_ORG = {
                 "memberOf": {"@type": "Organization", "name": "Architektenkammer Nordrhein-Westfalen"}},
     "knowsAbout": ["Wohnungsbau", "Mehrfamilienhaus", "Projektentwicklung", "Bebauungskonzept", "Machbarkeitsstudie",
                    "Bauleitplanung", "Genehmigungsplanung", "Wohnraumförderung NRW"],
-    "sameAs": [IG_URL],
+    "sameAs": [IG_URL, LI_URL],
 }
 
 
@@ -82,10 +84,10 @@ def header(path):
       <div class="nav__extra">
         <a href="mailto:info@laudenberg-architektur.de">info@laudenberg-architektur.de</a>
         <a href="tel:+4915789195072">0157 89195072</a>
-        <a href="{IG_URL}" rel="noopener" target="_blank">{IG}Instagram</a>
+        <span class="nav__social"><a href="{IG_URL}" rel="noopener" target="_blank">{IG}Instagram</a><a href="{LI_URL}" rel="noopener" target="_blank">{LI}LinkedIn</a></span>
       </div>
       <a class="nav__phone" href="tel:+4915789195072">0157 89195072</a>
-      <a class="nav__ig" href="{IG_URL}" rel="noopener" target="_blank" aria-label="Instagram: al_architektur">{IG}</a>
+      <span class="nav__icons"><a class="nav__ig" href="{IG_URL}" rel="noopener" target="_blank" aria-label="Instagram: al_architektur">{IG}</a><a class="nav__ig" href="{LI_URL}" rel="noopener" target="_blank" aria-label="LinkedIn: Anncathrin Laudenberg">{LI}</a></span>
       <a class="btn btn--solid" href="kontakt.html">Projekt anfragen</a>
     </nav>
   </div>
@@ -99,25 +101,25 @@ def footer(path):
     return f'''
 <footer class="site-footer">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Anncathrin Laudenberg Architektur, zur Startseite">
-      {MARK}
-      {WORDMARK}
-    </a>
-    <div class="footer__col">
-      <h3>Kontakt</h3>
-      <a href="mailto:info@laudenberg-architektur.de">E-Mail schreiben</a>
-      <a href="tel:+4915789195072">0157 89195072</a>
-    </div>
-    <div class="footer__col">
-      <h3>Seiten</h3>
-      <a href="projekte.html"{cur('projekte.html')}>Projekte</a>
-      <a href="leistungen.html"{cur('leistungen.html')}>Leistungen</a>
-      <a href="buero.html"{cur('buero.html')}>Büro</a>
-      <a href="kontakt.html"{cur('kontakt.html')}>Kontakt</a>
-    </div>
-    <div class="footer__col">
-      <h3>Folgen</h3>
-      <a href="{IG_URL}" rel="noopener" target="_blank">Instagram</a>
+    <div class="footer__main">
+      <a class="brand" href="index.html" aria-label="Anncathrin Laudenberg Architektur, zur Startseite">
+        {MARK}
+        {WORDMARK}
+      </a>
+      <nav class="footer__nav" aria-label="Seiten">
+        <a href="projekte.html"{cur('projekte.html')}>Projekte</a>
+        <a href="leistungen.html"{cur('leistungen.html')}>Leistungen</a>
+        <a href="buero.html"{cur('buero.html')}>Büro</a>
+        <a href="kontakt.html"{cur('kontakt.html')}>Kontakt</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="mailto:info@laudenberg-architektur.de">info@laudenberg-architektur.de</a>
+        <a href="tel:+4915789195072">0157 89195072</a>
+      </div>
+      <div class="footer__social">
+        <a class="nav__ig" href="{IG_URL}" rel="noopener" target="_blank" aria-label="Instagram: al_architektur">{IG}</a>
+        <a class="nav__ig" href="{LI_URL}" rel="noopener" target="_blank" aria-label="LinkedIn: Anncathrin Laudenberg">{LI}</a>
+      </div>
     </div>
     <div class="footer__legal">
       <span>© 2026 Anncathrin Laudenberg Architektur</span>
@@ -151,8 +153,8 @@ ABOUT = f'''
       </figure>
       <div class="about__copy">
         <h2 id="about-title">Eine Ansprechpartnerin für Ihr Projekt</h2>
-        <p>Ich bin Architektin, Mitglied der Architektenkammer Nordrhein-Westfalen und führe seit 2026 mein eigenes Büro in Overath.</p>
-        <p>Nach meinem Master an der FH Aachen habe ich in einem Architekturbüro und einem ganzheitlichen Planungsbüro Projekte vom Entwurf bis zur Umsetzung begleitet. Heute plane ich selbst, kenne jedes Projekt im Detail und bin für meine Bauherren direkt erreichbar. Für größere Vorhaben arbeite ich mit festen freiberuflichen Mitarbeitern zusammen.</p>
+        <p>Ich bin Architektin mit Leidenschaft – geradlinig, zielstrebig und verlässlich. Mein Schwerpunkt liegt im Wohnungsbau und in der Projektentwicklung. Insbesondere in der Zusammenarbeit mit Bauträgern und Investoren verbinde ich gestalterischen Anspruch mit einem klaren Blick für Wirtschaftlichkeit, Umsetzbarkeit und die jeweiligen planungsrechtlichen Rahmenbedingungen.</p>
+        <p>Von der ersten Idee bis zur Genehmigung und darüber hinaus begleite ich jedes Projekt persönlich. Für meine Auftraggeber bin ich dabei durchgehend die zentrale Ansprechpartnerin. Ich behalte die Zusammenhänge im Blick und lege großen Wert auf kurze Abstimmungswege, eine direkte, verlässliche Kommunikation und eine partnerschaftliche Zusammenarbeit.</p>
         <div class="about__actions">
           <a class="link-arrow" href="buero.html">Mehr über das Büro
             {ARROW}
@@ -166,19 +168,37 @@ ABOUT = f'''
 HERO = f'''
   <section class="hero" aria-labelledby="hero-title">
     <figure class="hero__media" aria-hidden="true">
-      <img src="assets/img/hero-anncathrin-laudenberg-architektin-2400.webp" srcset="assets/img/hero-anncathrin-laudenberg-architektin-1200.webp 1200w, assets/img/hero-anncathrin-laudenberg-architektin-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 64vw" width="2400" height="1600" alt="" fetchpriority="high">
+      <img src="assets/img/hero-anncathrin-laudenberg-architektin-2400.webp" srcset="assets/img/hero-anncathrin-laudenberg-architektin-1200.webp 1200w, assets/img/hero-anncathrin-laudenberg-architektin-2400.webp 2400w" sizes="100vw" width="2400" height="1600" alt="" fetchpriority="high">
     </figure>
     <div class="wrap grid">
       <div class="hero__copy">
         <h1 id="hero-title"><span class="line" style="--i:0"><span>Architektur beginnt</span></span> <span class="line" style="--i:1"><span>mit dem Potenzial</span></span> <span class="line" style="--i:2"><span>eines Ortes.</span></span></h1>
         <p class="lead soft" style="--d:560">Individuelle Konzepte für Wohnungsbau und Projektentwicklung – wirtschaftlich durchdacht, planungsrechtlich fundiert und architektonisch überzeugend.</p>
         <div class="hero__actions soft" style="--d:700">
+          <a class="btn btn--ghost" href="projekte.html">Projekte ansehen</a>
           <a class="btn btn--solid" href="kontakt.html">Projekt anfragen
             {ARROW}
           </a>
-          <a class="btn btn--ghost" href="projekte.html">Projekte ansehen</a>
         </div>
       </div>
+    </div>
+  </section>
+'''
+
+SVC = [('projektentwicklung', 'Projektentwicklung & Konzeption'),
+       ('objektplanung', 'Architektur & Objektplanung'),
+       ('beratung', 'Beratung & Ergänzende Leistungen')]
+svc_items = '\n'.join(f'        <li style="--i:{i}"><a href="leistungen.html#{a}">{t}</a></li>' for i, (a, t) in enumerate(SVC))
+OVERVIEW = f'''
+  <section class="svc-ov" aria-labelledby="svc-ov-title">
+    <div class="wrap">
+      <h2 id="svc-ov-title">Von der ersten Idee bis zur Genehmigung – und darüber hinaus.</h2>
+      <ul class="svc-ov__list">
+{svc_items}
+      </ul>
+      <a class="svc-ov__all" href="leistungen.html">Alle Leistungen
+        {ARROW}
+      </a>
     </div>
   </section>
 '''
@@ -186,8 +206,8 @@ HERO = f'''
 page('index.html',
      'Anncathrin Laudenberg Architektur | Architektin für Wohnungsbau und Projektentwicklung in Overath',
      'Architektin für Wohnungsbau und Projektentwicklung im Raum Köln, Bonn und Bergisches Land. Individuelle Konzepte, wirtschaftlich durchdacht und planungsrechtlich fundiert.',
-     HERO + ABOUT,
-     ld(LD_ORG) + '<link rel="preload" as="image" href="assets/img/hero-anncathrin-laudenberg-architektin-2400.webp" imagesrcset="assets/img/hero-anncathrin-laudenberg-architektin-1200.webp 1200w, assets/img/hero-anncathrin-laudenberg-architektin-2400.webp 2400w" imagesizes="(max-width: 900px) 100vw, 64vw">\n')
+     HERO + OVERVIEW + ABOUT,
+     ld(LD_ORG) + '<link rel="preload" as="image" href="assets/img/hero-anncathrin-laudenberg-architektin-2400.webp" imagesrcset="assets/img/hero-anncathrin-laudenberg-architektin-1200.webp 1200w, assets/img/hero-anncathrin-laudenberg-architektin-2400.webp 2400w" imagesizes="100vw">\n')
 
 # ---------------------------------------------------------------- Projekte
 LPH = 'Leistungsphasen 1 bis 4'
@@ -226,9 +246,11 @@ pdata = [dict(id=p['id'], name=p['name'], images=p['images'],
               data=[['Ort', p['ort']], ['Projektart', p['art']], ['Umfang', p['umfang']], ['Leistungen', LPH]])
          for p in PROJECTS]
 PROJ_MAIN = f'''
-  <section class="page-head" aria-labelledby="page-title">
+  <section class="page-head page-head--compact" aria-labelledby="page-title">
     <div class="wrap">
       <h1 id="page-title">Projekte</h1>
+      <p class="page-head__claim">Unterschiedliche Aufgaben. Individuelle Lösungen.</p>
+      <p class="page-head__note">Ein Einblick in ausgewählte Planungen und Projekte.</p>
     </div>
   </section>
   <section class="page-body" aria-label="Projektübersicht">
@@ -276,76 +298,12 @@ page('projekte.html',
      'Ausgewählte Projekte von Anncathrin Laudenberg Architektur: Mehrfamilienwohnhäuser, Wohnbebauung und städtebauliche Konzepte in Overath, Siegburg, Sankt Augustin, Hennef und Neustadt (Wied).',
      PROJ_MAIN)
 
-# ---------------------------------------------------------------- Leistungen
-services = part('services.html')
-intro = re.search(r'<p class="services__intro">(.*?)</p>', services, re.S).group(1)
-services = re.sub(r'\s*<h2 id="services-title">Leistungen</h2>\s*<p class="services__intro">.*?</p>', '', services, flags=re.S)
-services = services.replace('<section class="services" id="leistungen" aria-labelledby="services-title">', '<section class="services" aria-label="Leistungsübersicht">')
-faq = part('faq.html')
-faq_ld = part('faq_ld.html')
-LEIST_MAIN = f'''
-  <section class="page-head" aria-labelledby="page-title">
-    <div class="wrap">
-      <h1 id="page-title">Leistungen</h1>
-      <p>{intro}</p>
-    </div>
-  </section>
-{services}
-{faq}
-'''
-page('leistungen.html',
-     'Leistungen: Objektplanung und Projektentwicklung | Anncathrin Laudenberg Architektur',
-     'Objektplanung (LPH 1 bis 4), Projektentwicklung, Machbarkeitsstudien, städtebauliche Konzepte und Begleitung von Bauleitplanverfahren im Raum Köln, Bonn und Bergisches Land.',
-     LEIST_MAIN, faq_ld)
-
-# ---------------------------------------------------------------- Büro
-TB = [('Name', 'Gyors'), ('Funktion', 'Bürohund'), ('Zuständigkeit', 'Gute Laune und die Einhaltung der täglichen Frischluftquote', 'wide'),
-      ('Maßstab', '1:1'), ('Geprüft', 'A. Laudenberg')]
-tb = '\n'.join(f'          <div{" class=\"wide\"" if len(t) > 2 else ""} style="--i:{i}"><dt>{t[0]}</dt><dd>{t[1]}</dd></div>' for i, t in enumerate(TB))
-BUERO_MAIN = f'''
-  <section class="page-head" aria-labelledby="page-title">
-    <div class="wrap">
-      <h1 id="page-title">Eine Ansprechpartnerin für Ihr Projekt</h1>
-    </div>
-  </section>
-  <section class="office" aria-label="Über mich">
-    <div class="wrap grid">
-      <div class="office__intro">
-        <p>Ich bin Architektin, Mitglied der Architektenkammer Nordrhein-Westfalen und führe seit 2026 mein eigenes Büro in Overath.</p>
-        <p>Nach meinem Master an der FH Aachen habe ich in einem Architekturbüro und einem ganzheitlichen Planungsbüro Projekte vom Entwurf bis zur Umsetzung begleitet. Heute plane ich selbst, kenne jedes Projekt im Detail und bin für meine Bauherren direkt erreichbar.</p>
-        <p>Für größere Vorhaben arbeite ich mit festen freiberuflichen Mitarbeitern zusammen. So bleibt die Verantwortung bei einer Person, und die Kapazität wächst mit dem Projekt.</p>
-      </div>
-      <figure class="office__img office__img--a reveal-img">
-        <img src="assets/img/anncathrin-laudenberg-portrait.webp" width="1200" height="1800" loading="lazy" alt="Anncathrin Laudenberg im Büro">
-      </figure>
-      <figure class="office__img office__img--b reveal-img">
-        <img src="assets/img/projektbesprechung-buero.webp" width="1800" height="1200" loading="lazy" alt="Anncathrin Laudenberg erläutert einen Entwurf am Bildschirm in einer Projektbesprechung">
-      </figure>
-      <div class="office__work">
-        <h2>Persönlich und vor Ort</h2>
-        <p>Abstimmungen finden direkt bei meinen Bauherren, auf dem Grundstück oder bei den Behörden statt. Kurze Wege, klare Entscheidungen.</p>
-      </div>
-    </div>
-  </section>
-  <section class="dog" aria-labelledby="dog-title">
-    <div class="wrap grid">
-      <figure class="dog__photo reveal-img">
-        <img src="assets/img/gyors.webp" width="900" height="1200" loading="lazy" alt="Gyors, der Bürohund, sitzt in einer Blumenwiese">
-      </figure>
-      <div class="dog__copy">
-        <h2 id="dog-title">Und dann ist da noch Gyors.</h2>
-        <p>Er begleitet mich durch den Arbeitsalltag und sorgt dafür, dass zwischen zwei Plänen auch mal eine Runde an der frischen Luft drin ist.</p>
-        <dl class="titleblock">
-{tb}
-        </dl>
-      </div>
-    </div>
-  </section>
-'''
-page('buero.html',
-     'Büro | Anncathrin Laudenberg Architektur, Overath',
-     'Anncathrin Laudenberg, Architektin aus Overath: persönliche Zusammenarbeit, kurze Wege und eine feste Ansprechpartnerin für Wohnungsbau und Projektentwicklung.',
-     BUERO_MAIN)
+# ---------------------------------------------------------------- Leistungen, Büro
+import sys
+sys.path.insert(0, str(ROOT / 'tools'))
+from pages_leistungen_buero import leistungen, buero
+leistungen(page, ld)
+buero(page)
 
 # ---------------------------------------------------------------- Kontakt
 contact = part('contact.html')
