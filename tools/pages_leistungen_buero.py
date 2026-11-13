@@ -23,13 +23,19 @@ def leistungen(page, ld):
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage",
               "mainEntity": [{"@type": "Question", "name": q,
                               "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}
+    jump = '\n'.join(f'          <li><a href="#{sid}">{title}</a></li>' for sid, title, _, _ in SERVICES)
     main = f'''
   <section class="lhead" aria-labelledby="page-title">
-    <figure class="lhead__media">
-      <img src="assets/img/zusammenarbeit-planbesprechung.webp" width="1800" height="1200" alt="Anncathrin Laudenberg bespricht Pläne mit einem Auftraggeber" fetchpriority="high">
-    </figure>
     <div class="wrap">
-      <h1 id="page-title">Leistungen</h1>
+      <div class="lhead__copy">
+        <h1 id="page-title">Leistungen</h1>
+        <ul class="lhead__jump">
+{jump}
+        </ul>
+      </div>
+      <figure class="lhead__media reveal-img">
+        <img src="assets/img/zusammenarbeit-planbesprechung.webp" width="1200" height="1800" alt="Anncathrin Laudenberg erläutert einem Auftraggeber die ausgelegten Pläne am Besprechungstisch" fetchpriority="high">
+      </figure>
     </div>
   </section>
   <section class="svcs" aria-label="Leistungsbereiche">
