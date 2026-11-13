@@ -25,17 +25,12 @@ def leistungen(page, ld):
                               "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}
     jump = '\n'.join(f'          <li><a href="#{sid}">{title}</a></li>' for sid, title, _, _ in SERVICES)
     main = f'''
-  <section class="lhead" aria-labelledby="page-title">
+  <section class="lhero" aria-labelledby="page-title">
+    <figure class="lhero__media">
+      <img src="assets/img/zusammenarbeit-planbesprechung.webp" width="1200" height="1800" alt="Anncathrin Laudenberg erläutert einem Auftraggeber die ausgelegten Pläne am Besprechungstisch" fetchpriority="high">
+    </figure>
     <div class="wrap">
-      <div class="lhead__copy">
-        <h1 id="page-title">Leistungen</h1>
-        <ul class="lhead__jump">
-{jump}
-        </ul>
-      </div>
-      <figure class="lhead__media reveal-img">
-        <img src="assets/img/zusammenarbeit-planbesprechung.webp" width="1200" height="1800" alt="Anncathrin Laudenberg erläutert einem Auftraggeber die ausgelegten Pläne am Besprechungstisch" fetchpriority="high">
-      </figure>
+      <h1 id="page-title" class="lhero__title">Leistungen</h1>
     </div>
   </section>
   <section class="svcs" aria-label="Leistungsbereiche">

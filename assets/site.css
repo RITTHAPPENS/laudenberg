@@ -748,3 +748,27 @@ body.pd-open { overflow: hidden; }
   .lhead__media img { aspect-ratio: 4 / 5; }
   .lhead .wrap { row-gap: 0; }
 }
+
+/* Leistungen: Kopf als Split, Foto bis an den rechten Rand, Überschrift läuft ins Bild */
+.lhero { --split: 38vw; position: relative; isolation: isolate; height: clamp(420px, 74vh, 800px); overflow: hidden; }
+.lhero__media { position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; left: var(--split); margin: 0; }
+.lhero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; filter: grayscale(1) contrast(1.04); }
+.lhero .wrap { height: 100%; display: flex; align-items: flex-end; padding-bottom: clamp(8px, 1.2vw, 20px); }
+/* Ein Wort, zwei Farben: dunkel auf Papier, hell auf dem Foto. Die Farbkante sitzt exakt an der Bildkante. */
+.lhero__title { font-size: clamp(3.5rem, 1.4rem + 7.4vw, 10.5rem); line-height: .9; letter-spacing: -0.045em; font-weight: 500; font-stretch: 112%; white-space: nowrap;
+  background-image: linear-gradient(90deg, var(--ink) 0, var(--ink) calc(var(--split) - var(--gutter) - max(0px, (100vw - var(--max)) / 2)), var(--paper) 0, var(--paper) 100%);
+  background-size: 100vw 100%; background-repeat: no-repeat;
+  -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .lhero__media { animation: lheroIn 1.4s var(--ease-in-out) both; }
+  @keyframes lheroIn { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0 0 0 0); } }
+  .js .lhero__title { animation: softIn 1s var(--ease-out) .5s both; }
+}
+@media (max-width: 900px) {
+  .lhero { --split: 0px; height: auto; display: flex; flex-direction: column; }
+  .lhero__media { position: relative; inset: auto; left: auto; width: 100%; aspect-ratio: 4 / 5; }
+  .lhero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,21,21,.6) 0%, rgba(20,21,21,0) 40%); }
+  .lhero .wrap { position: absolute; inset: 0; }
+  .lhero__title { background: none; color: var(--paper); font-size: clamp(2.75rem, 14vw, 4.5rem); }
+}
+.lhero__media::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(20,21,21,.62) 0%, rgba(20,21,21,.25) 26%, rgba(20,21,21,0) 46%); }
