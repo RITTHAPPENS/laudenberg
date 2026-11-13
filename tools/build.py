@@ -166,13 +166,14 @@ ABOUT = f'''
 '''
 
 HERO = f'''
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero hero--a" id="hero" aria-labelledby="hero-title">
     <figure class="hero__media" aria-hidden="true">
       <img src="assets/img/hero-anncathrin-laudenberg-architektin-2400.webp" srcset="assets/img/hero-anncathrin-laudenberg-architektin-1200.webp 1200w, assets/img/hero-anncathrin-laudenberg-architektin-2400.webp 2400w" sizes="100vw" width="2400" height="1600" alt="" fetchpriority="high">
     </figure>
     <div class="wrap grid">
       <div class="hero__copy">
         <h1 id="hero-title"><span class="line" style="--i:0"><span>Architektur beginnt</span></span> <span class="line" style="--i:1"><span>mit dem Potenzial</span></span> <span class="line" style="--i:2"><span>eines Ortes.</span></span></h1>
+        <div class="hero__aside">
         <p class="lead soft" style="--d:560">Individuelle Konzepte für Wohnungsbau und Projektentwicklung – wirtschaftlich durchdacht, planungsrechtlich fundiert und architektonisch überzeugend.</p>
         <div class="hero__actions soft" style="--d:700">
           <a class="btn btn--ghost" href="projekte.html">Projekte ansehen</a>
@@ -180,9 +181,11 @@ HERO = f'''
             {ARROW}
           </a>
         </div>
+        </div>
       </div>
     </div>
   </section>
+  <script>(function(){{var v=new URLSearchParams(location.search).get('hero');if(v==='b'){{var h=document.getElementById('hero');h.classList.remove('hero--a');h.classList.add('hero--b');}}}})();</script>
 '''
 
 SVC = [('projektentwicklung', 'Projektentwicklung & Konzeption'),
