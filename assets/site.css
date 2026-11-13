@@ -653,7 +653,7 @@ body.pd-open { overflow: hidden; }
 .lhero .wrap { height: 100%; display: flex; align-items: flex-end; padding-bottom: clamp(8px, 1.2vw, 20px); }
 /* Ein Wort, zwei Farben: dunkel auf Papier, hell auf dem Foto. Die Farbkante sitzt exakt an der Bildkante. */
 .lhero__title { font-size: clamp(3.5rem, 1.4rem + 7.4vw, 10.5rem); line-height: .9; letter-spacing: -0.045em; font-weight: 500; font-stretch: 112%; white-space: nowrap;
-  background-image: linear-gradient(90deg, var(--ink) 0, var(--ink) calc(var(--split) - var(--gutter) - max(0px, (100vw - var(--max)) / 2)), var(--paper) 0, var(--paper) 100%);
+  background-image: linear-gradient(90deg, var(--ink) 0, var(--ink) var(--cut, calc(var(--split) - var(--gutter) - max(0px, (100vw - var(--max)) / 2))), var(--paper) 0, var(--paper) 100%);
   background-size: 100vw 100%; background-repeat: no-repeat;
   -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em; }
 @media (prefers-reduced-motion: no-preference) {
@@ -668,4 +668,5 @@ body.pd-open { overflow: hidden; }
   .lhero .wrap { position: absolute; inset: 0; }
   .lhero__title { background: none; color: var(--paper); font-size: clamp(2.75rem, 14vw, 4.5rem); }
 }
+.lhero__b { margin-left: .06em; }
 .lhero__media::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(20,21,21,.62) 0%, rgba(20,21,21,.25) 26%, rgba(20,21,21,0) 46%); }

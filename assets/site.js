@@ -94,6 +94,25 @@
     if (hash) projects.forEach(function (p, i) { if (p.id === hash) open(i); });
   }
 
+  /* Leistungen: Bildkante exakt in die Lücke zwischen „g“ und „e“ legen */
+  var lh = document.querySelector('.lhero');
+  if (lh) {
+    var la = lh.querySelector('.lhero__a'), lb = lh.querySelector('.lhero__b'), lt = lh.querySelector('.lhero__title');
+    var mobile = window.matchMedia('(max-width: 900px)');
+    var placeCut = function () {
+      if (mobile.matches) { lh.style.removeProperty('--split'); lt.style.removeProperty('--cut'); return; }
+      var ra = la.getBoundingClientRect(), rb = lb.getBoundingClientRect();
+      var fs = parseFloat(getComputedStyle(lt).fontSize);
+      /* Glyphenkanten: „g“ ragt ca. 0,035em über seine Laufweite, „e“ beginnt ca. 0,047em dahinter */
+      var x = ((ra.right + 0.035 * fs) + (rb.left + 0.047 * fs)) / 2;
+      lh.style.setProperty('--split', (x - lh.getBoundingClientRect().left) + 'px');
+      lt.style.setProperty('--cut', (x - lt.getBoundingClientRect().left) + 'px');
+    };
+    placeCut();
+    if (document.fonts) document.fonts.ready.then(placeCut);
+    window.addEventListener('resize', placeCut);
+  }
+
   /* Kontaktformular (Prototyp) */
   var form = document.getElementById('anfrage');
   if (form) {

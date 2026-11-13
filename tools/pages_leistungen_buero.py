@@ -30,7 +30,7 @@ def leistungen(page, ld):
       <img src="assets/img/zusammenarbeit-planbesprechung.webp" width="1200" height="1800" alt="Anncathrin Laudenberg erläutert einem Auftraggeber die ausgelegten Pläne am Besprechungstisch" fetchpriority="high">
     </figure>
     <div class="wrap">
-      <h1 id="page-title" class="lhero__title">Leistungen</h1>
+      <h1 id="page-title" class="lhero__title"><span class="lhero__a">Leistung</span><span class="lhero__b">en</span></h1>
     </div>
   </section>
   <section class="svcs" aria-label="Leistungsbereiche">
