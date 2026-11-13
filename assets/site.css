@@ -647,9 +647,9 @@ body.pd-open { overflow: hidden; }
 /* Leistungen: Kopf neu, Foto im Hochformat-Ausschnitt statt Breitbild-Band */
 
 /* Leistungen: Kopf als Split, Foto bis an den rechten Rand, Überschrift läuft ins Bild */
-.lhero { --split: 38vw; position: relative; isolation: isolate; height: clamp(420px, 74vh, 800px); overflow: hidden; }
+.lhero { --split: 38vw; position: relative; isolation: isolate; height: clamp(480px, calc(100dvh - var(--header-h)), 980px); overflow: hidden; }
 .lhero__media { position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; left: var(--split); margin: 0; }
-.lhero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; filter: grayscale(1) contrast(1.04); }
+.lhero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 6%; transform: scale(1.08); transform-origin: 20% 0%; filter: grayscale(1) contrast(1.04); }
 .lhero .wrap { height: 100%; display: flex; align-items: flex-end; padding-bottom: clamp(8px, 1.2vw, 20px); }
 /* Ein Wort, zwei Farben: dunkel auf Papier, hell auf dem Foto. Die Farbkante sitzt exakt an der Bildkante. */
 .lhero__title { font-size: clamp(3.5rem, 1.4rem + 7.4vw, 10.5rem); line-height: .9; letter-spacing: -0.045em; font-weight: 500; font-stretch: 112%; white-space: nowrap;
