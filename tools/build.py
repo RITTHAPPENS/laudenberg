@@ -166,7 +166,7 @@ ABOUT = f'''
 '''
 
 HERO = f'''
-  <section class="hero hero--a" id="hero" aria-labelledby="hero-title">
+  <section class="hero hero--b" id="hero" aria-labelledby="hero-title">
     <figure class="hero__media" aria-hidden="true">
       <img src="assets/img/hero-anncathrin-laudenberg-architektin-2400.webp" srcset="assets/img/hero-anncathrin-laudenberg-architektin-1200.webp 1200w, assets/img/hero-anncathrin-laudenberg-architektin-2400.webp 2400w" sizes="100vw" width="2400" height="1600" alt="" fetchpriority="high">
     </figure>
@@ -185,7 +185,7 @@ HERO = f'''
       </div>
     </div>
   </section>
-  <script>(function(){{var v=new URLSearchParams(location.search).get('hero');if(v==='b'){{var h=document.getElementById('hero');h.classList.remove('hero--a');h.classList.add('hero--b');}}}})();</script>
+  <script>(function(){{var v=new URLSearchParams(location.search).get('hero');if(v==='a'){{var h=document.getElementById('hero');h.classList.remove('hero--b');h.classList.add('hero--a');}}}})();</script>
 '''
 
 SVC = [('projektentwicklung', 'Projektentwicklung & Konzeption'),

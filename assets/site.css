@@ -702,7 +702,7 @@ body.pd-open { overflow: hidden; }
 .hero--b .hero__media { z-index: -2; left: 0; right: 0; width: 100%; }
 .hero--b .hero__media img { object-position: 50% 30%; }
 .hero--b::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: linear-gradient(15deg, rgba(20,21,21,.78) 0%, rgba(20,21,21,.5) 32%, rgba(20,21,21,0) 62%); }
+  background: radial-gradient(ellipse 80% 95% at 0% 100%, rgba(20,21,21,.8) 0%, rgba(20,21,21,.58) 45%, rgba(20,21,21,0) 100%); }
 .hero--b .wrap.grid { padding-bottom: clamp(48px, 6vw, 96px); }
 .hero--b h1 { font-size: var(--fs-h2); color: var(--paper); }
 .hero--b .lead { color: rgba(243,244,243,.86); }
@@ -722,6 +722,7 @@ body.pd-open { overflow: hidden; }
   .hero--b .hero__media img { aspect-ratio: auto; height: 100%; -webkit-mask-image: none; mask-image: none; object-position: 30% 30%; }
   .hero--b .hero__copy { grid-column: 1 / -1; }
   .hero--b .wrap.grid { padding-top: 46vh; }
+  .hero--b::after { background: linear-gradient(0deg, rgba(20,21,21,.85) 0%, rgba(20,21,21,.6) 45%, rgba(20,21,21,0) 72%); }
 }
 
 /* Leistungen: Kopf neu, Foto im Hochformat-Ausschnitt statt Breitbild-Band */
