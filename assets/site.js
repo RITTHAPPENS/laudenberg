@@ -27,7 +27,7 @@
   var reveal = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); reveal.unobserve(en.target); } });
   }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.tile, .service, .reveal-img, .titleblock, .svc-ov__list').forEach(function (el) { reveal.observe(el); });
+  document.querySelectorAll('.tile, .reveal-img, .svc-ov__list').forEach(function (el) { reveal.observe(el); });
 
   /* Touch-Geräte: Kacheln werden farbig, sobald sie im Bild sind */
   if (window.matchMedia('(hover: none)').matches) {
