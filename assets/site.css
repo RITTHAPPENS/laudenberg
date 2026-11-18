@@ -542,7 +542,7 @@ body.pd-open { overflow: hidden; }
 .orow__img { margin: 0; grid-column: 1 / span 5; grid-row: 1; }
 .orow__img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.03); transition: filter .8s var(--ease); }
 .orow__img:hover img { filter: grayscale(0) contrast(1); }
-.orow__copy { grid-column: 7 / span 6; grid-row: 1; }
+.orow__copy { grid-column: 8 / span 5; grid-row: 1; }
 .orow--right .orow__img { grid-column: 8 / span 5; }
 .orow--right .orow__copy { grid-column: 1 / span 6; }
 .orow__label { font-family: var(--mono); font-size: var(--fs-label); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
