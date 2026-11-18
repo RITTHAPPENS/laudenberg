@@ -63,7 +63,7 @@ OFFICE = [
      ['Gute Architektur bedeutet für mich mehr als eine ansprechende Gestaltung. Sie muss funktional durchdacht, wirtschaftlich sinnvoll und langfristig überzeugend sein.',
       'Jedes Grundstück und jedes Bauvorhaben bringt eigene Potenziale und Herausforderungen mit sich. Mein Anspruch ist es, diese frühzeitig zu erkennen und daraus individuelle, realisierbare Konzepte zu entwickeln. Dabei betrachte ich gestalterische, wirtschaftliche und planungsrechtliche Anforderungen nicht isoliert, sondern als Teil einer ganzheitlichen Planung.',
       'Denn Wirtschaftlichkeit und gute Architektur sind für mich kein Widerspruch, sondern die Grundlage einer erfolgreichen Projektentwicklung.'],
-     ('assets/img/anncathrin-laudenberg-portrait.webp', 1200, 1800, 'Porträt der Architektin Anncathrin Laudenberg im Büro', '50% 20%')),
+     ('assets/img/philosophie-planbesprechung.webp', 1200, 1800, 'Anncathrin Laudenberg bespricht mit einem Bauherrn die ausgelegten Pläne am Tisch', '50% 30%')),
     ('werdegang', '03 · Werdegang', 'Erfahrung als Fundament.',
      ['Nach meinem Masterabschluss 2021 an der FH Aachen war ich zunächst in einem Architekturbüro und anschließend in einem ganzheitlich aufgestellten Planungsbüro tätig. In dieser Zeit habe ich Projekte unterschiedlicher Größenordnungen in allen Leistungsphasen der HOAI begleitet, vom ersten Entwurf bis zur baulichen Umsetzung.',
       'Seit 2026 führe ich mein eigenes Architekturbüro. Meine bisherigen Erfahrungen bilden die Grundlage für eine vorausschauende und lösungsorientierte Planung. Durch meine Tätigkeit in den unterschiedlichen Projektphasen habe ich ein umfassendes Verständnis für die Zusammenhänge zwischen Entwurf, technischer Planung und baulicher Umsetzung entwickelt.',
