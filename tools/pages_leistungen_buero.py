@@ -27,7 +27,10 @@ def leistungen(page, ld):
     main = f'''
   <section class="lhero" aria-labelledby="page-title">
     <figure class="lhero__media">
-      <img src="assets/img/zusammenarbeit-planbesprechung.webp" width="1200" height="1800" alt="Anncathrin Laudenberg erläutert einem Auftraggeber die ausgelegten Pläne am Besprechungstisch" fetchpriority="high">
+      <picture>
+        <source media="(max-width: 900px)" srcset="assets/img/leistungen-arbeitsmittel-hoch.webp" width="1200" height="1600">
+        <img src="assets/img/leistungen-arbeitsmittel-quer.webp" width="2400" height="1800" alt="Maßstab, Druckbleistift und Architektenstempel auf einem Holztisch" fetchpriority="high">
+      </picture>
     </figure>
     <div class="wrap">
       <h1 id="page-title" class="lhero__title"><span class="lhero__a">Leistung</span><span class="lhero__b">en</span></h1>

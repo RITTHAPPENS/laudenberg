@@ -50,6 +50,7 @@
       var p = projects[idx], im = p.images[i];
       img = i;
       mediaImg.src = im.src; mediaImg.alt = im.alt; mediaImg.width = im.w; mediaImg.height = im.h;
+      mediaImg.classList.toggle('is-portrait', im.h > im.w);
       if (!reduce) { mediaImg.classList.remove('swap'); void mediaImg.offsetWidth; mediaImg.classList.add('swap'); }
       caption.textContent = im.note || '';
       thumbs.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
