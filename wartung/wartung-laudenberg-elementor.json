@@ -1,0 +1,723 @@
+{
+ "version": "0.4",
+ "title": "Wartung Laudenberg",
+ "type": "page",
+ "content": [
+  {
+   "id": "24d4fd4",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "full",
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    },
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0",
+     "isLinked": true
+    },
+    "flex_direction": "row",
+    "flex_direction_tablet": "column",
+    "flex_align_items": "stretch",
+    "min_height": {
+     "unit": "vh",
+     "size": 100,
+     "sizes": []
+    },
+    "background_background": "classic",
+    "background_color": "#F3F4F3"
+   },
+   "elements": [
+    {
+     "id": "202525c",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "padding": {
+       "unit": "px",
+       "top": "56",
+       "right": "56",
+       "bottom": "48",
+       "left": "56",
+       "isLinked": false
+      },
+      "flex_gap": {
+       "unit": "px",
+       "size": 56,
+       "column": "56",
+       "row": "56",
+       "isLinked": true
+      },
+      "flex_direction": "column",
+      "flex_justify_content": "space-between",
+      "width": {
+       "unit": "%",
+       "size": 58,
+       "sizes": []
+      },
+      "width_tablet": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "min_height": {
+       "unit": "vh",
+       "size": 100,
+       "sizes": []
+      },
+      "min_height_tablet": {
+       "unit": "px",
+       "size": 0,
+       "sizes": []
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "24",
+       "right": "24",
+       "bottom": "32",
+       "left": "24",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "7c6e221",
+       "elType": "widget",
+       "widgetType": "html",
+       "isInner": false,
+       "settings": {
+        "html": "<style>\n.lbw-h1 .elementor-heading-title{font-stretch:112%}\n.lbw-link .elementor-heading-title a{padding-bottom:4px;border-bottom:1px solid rgba(20,21,21,.16);transition:border-color .3s}\n.lbw-link .elementor-heading-title a:hover{border-color:#141515}\n.lbw-foot a{color:#6B6E6E;text-decoration:none;margin-right:28px}.lbw-foot a:hover{color:#141515}\n.lbw-social{display:flex;gap:14px;justify-content:flex-end}.lbw-social a{color:#6B6E6E}.lbw-social a:hover{color:#141515}.lbw-social svg{width:20px;height:20px;fill:currentColor;display:block}\n.lbw-toggle .elementor-tab-title{padding:0!important;border:0!important}\n.lbw-toggle .elementor-tab-content{padding:18px 0 0!important;border:0!important;max-width:62ch}\n.lbw-toggle .elementor-tab-content p+p{margin-top:12px}\n.lbw-mark svg{width:100%;height:auto;display:block}.lbw-mark path{fill:none;stroke:#F3F4F3;stroke-width:5}\n@media (prefers-reduced-motion:no-preference){.lbw-mark path{stroke-dasharray:1000;stroke-dashoffset:1000;animation:lbwDraw 2.2s cubic-bezier(.65,0,.35,1) .3s forwards}}\n@keyframes lbwDraw{to{stroke-dashoffset:0}}\n</style><a href=\"/\" aria-label=\"Anncathrin Laudenberg Architektur\" style=\"display:flex;align-items:center;gap:14px;width:max-content;color:#141515\"><svg viewBox=\"0 0 480 480\" aria-hidden=\"true\" style=\"width:46px;height:46px;flex:none\"><rect width=\"480\" height=\"480\" fill=\"#141515\"/><path d=\"M62 350 177 85l113 263h140\" fill=\"none\" stroke=\"#F3F4F3\" stroke-width=\"14\"/></svg><svg viewBox=\"0 0 240 45\" aria-hidden=\"true\" style=\"width:210px;height:auto;overflow:visible\"><text x=\"0\" y=\"12.2\" textLength=\"240\" lengthAdjust=\"spacing\" fill=\"#141515\" style=\"font-family:Archivo,sans-serif;font-size:11.6px;font-weight:500;letter-spacing:.02em\">ANNCATHRIN LAUDENBERG</text><text x=\"0\" y=\"44.6\" textLength=\"240\" lengthAdjust=\"spacing\" fill=\"#141515\" style=\"font-family:Archivo,sans-serif;font-size:23.5px;font-weight:300;letter-spacing:.08em\">ARCHITEKTUR</text></svg></a>"
+       },
+       "elements": []
+      },
+      {
+       "id": "60e0947",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0",
+         "isLinked": true
+        },
+        "flex_direction": "column"
+       },
+       "elements": [
+        {
+         "id": "d59a487",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Die neue Website entsteht gerade.",
+          "header_size": "h1",
+          "title_color": "#141515",
+          "typography_typography": "custom",
+          "typography_font_family": "Archivo",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 100,
+           "sizes": []
+          },
+          "typography_font_weight": "500",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 76,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 44,
+           "sizes": []
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 0.95,
+           "sizes": []
+          },
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -4.4,
+           "sizes": []
+          },
+          "_css_classes": "lbw-h1",
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "em",
+           "size": 15,
+           "sizes": []
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "01e953c",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "isInner": false,
+         "settings": {
+          "editor": "<p>Hier geht bald die neue Website von Anncathrin Laudenberg Architektur online. Für Ihr Projekt bin ich schon jetzt persönlich erreichbar.</p>",
+          "text_color": "#3A3D3D",
+          "typography_typography": "custom",
+          "typography_font_family": "Archivo",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 19,
+           "sizes": []
+          },
+          "typography_font_weight": "400",
+          "typography_font_size_tablet": {
+           "unit": "px",
+           "size": 18,
+           "sizes": []
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 17,
+           "sizes": []
+          },
+          "typography_line_height": {
+           "unit": "em",
+           "size": 1.55,
+           "sizes": []
+          },
+          "_margin": {
+           "unit": "px",
+           "top": "32",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "_element_width": "initial",
+          "_element_custom_width": {
+           "unit": "em",
+           "size": 30,
+           "sizes": []
+          }
+         },
+         "elements": []
+        },
+        {
+         "id": "c4ccaeb",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "flex_gap": {
+           "unit": "px",
+           "size": 88,
+           "column": "88",
+           "row": "22",
+           "isLinked": false
+          },
+          "flex_direction": "row",
+          "flex_direction_mobile": "column",
+          "_margin": {
+           "unit": "px",
+           "top": "48",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "margin": {
+           "unit": "px",
+           "top": "48",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          }
+         },
+         "elements": [
+          {
+           "id": "52179c3",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "flex_gap": {
+             "unit": "px",
+             "size": 0,
+             "column": "0",
+             "row": "0",
+             "isLinked": true
+            },
+            "flex_direction": "column",
+            "width": {
+             "unit": "px",
+             "size": null
+            }
+           },
+           "elements": [
+            {
+             "id": "cb9456d",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "E-Mail",
+              "header_size": "span",
+              "title_color": "#6B6E6E",
+              "typography_typography": "custom",
+              "typography_font_family": "Geist Mono",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11.5,
+               "sizes": []
+              },
+              "typography_font_weight": "400",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0.7,
+               "sizes": []
+              },
+              "typography_text_transform": "uppercase",
+              "_margin": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "8",
+               "left": "0",
+               "isLinked": false
+              }
+             },
+             "elements": []
+            },
+            {
+             "id": "1e37a36",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "info@laudenberg-architektur.de",
+              "header_size": "p",
+              "link": {
+               "url": "mailto:info@laudenberg-architektur.de",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "title_color": "#141515",
+              "typography_typography": "custom",
+              "typography_font_family": "Archivo",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 23,
+               "sizes": []
+              },
+              "typography_font_weight": "400",
+              "typography_font_size_tablet": {
+               "unit": "px",
+               "size": 21,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 19,
+               "sizes": []
+              },
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": -0.2,
+               "sizes": []
+              },
+              "_css_classes": "lbw-link"
+             },
+             "elements": []
+            }
+           ]
+          },
+          {
+           "id": "34ce0e2",
+           "elType": "container",
+           "isInner": true,
+           "settings": {
+            "content_width": "full",
+            "padding": {
+             "unit": "px",
+             "top": "0",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "isLinked": false
+            },
+            "flex_gap": {
+             "unit": "px",
+             "size": 0,
+             "column": "0",
+             "row": "0",
+             "isLinked": true
+            },
+            "flex_direction": "column"
+           },
+           "elements": [
+            {
+             "id": "45c1467",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "Telefon",
+              "header_size": "span",
+              "title_color": "#6B6E6E",
+              "typography_typography": "custom",
+              "typography_font_family": "Geist Mono",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 11.5,
+               "sizes": []
+              },
+              "typography_font_weight": "400",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0.7,
+               "sizes": []
+              },
+              "typography_text_transform": "uppercase",
+              "_margin": {
+               "unit": "px",
+               "top": "0",
+               "right": "0",
+               "bottom": "8",
+               "left": "0",
+               "isLinked": false
+              }
+             },
+             "elements": []
+            },
+            {
+             "id": "b3d10ad",
+             "elType": "widget",
+             "widgetType": "heading",
+             "isInner": false,
+             "settings": {
+              "title": "0157 89195072",
+              "header_size": "p",
+              "link": {
+               "url": "tel:+4915789195072",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "title_color": "#141515",
+              "typography_typography": "custom",
+              "typography_font_family": "Archivo",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 23,
+               "sizes": []
+              },
+              "typography_font_weight": "400",
+              "typography_font_size_tablet": {
+               "unit": "px",
+               "size": 21,
+               "sizes": []
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 19,
+               "sizes": []
+              },
+              "typography_line_height": {
+               "unit": "em",
+               "size": 1.3,
+               "sizes": []
+              },
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": -0.2,
+               "sizes": []
+              },
+              "_css_classes": "lbw-link"
+             },
+             "elements": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "0f8afa2",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        },
+        "flex_gap": {
+         "unit": "px",
+         "size": 10,
+         "column": "10",
+         "row": "10",
+         "isLinked": true
+        },
+        "flex_direction": "column"
+       },
+       "elements": [
+        {
+         "id": "3bb7870",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "flex_gap": {
+           "unit": "px",
+           "size": 0,
+           "column": "0",
+           "row": "0",
+           "isLinked": true
+          },
+          "flex_direction": "row",
+          "flex_justify_content": "space-between",
+          "flex_align_items": "center"
+         },
+         "elements": [
+          {
+           "id": "531668d",
+           "elType": "widget",
+           "widgetType": "text-editor",
+           "isInner": false,
+           "settings": {
+            "editor": "<p class=\"lbw-foot\"><a href=\"/datenschutzerklaerung/\">Datenschutz</a></p>",
+            "text_color": "#6B6E6E",
+            "typography_typography": "custom",
+            "typography_font_family": "Geist Mono",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 11.5,
+             "sizes": []
+            },
+            "typography_font_weight": "400",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 0.6,
+             "sizes": []
+            },
+            "typography_text_transform": "uppercase"
+           },
+           "elements": []
+          },
+          {
+           "id": "db30c5f",
+           "elType": "widget",
+           "widgetType": "html",
+           "isInner": false,
+           "settings": {
+            "html": "<div class=\"lbw-social\"><a href=\"https://www.instagram.com/al_architektur/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Instagram\"><svg viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z\"/></svg></a><a href=\"https://www.linkedin.com/in/anncathrin-laudenberg-b22871449/\" target=\"_blank\" rel=\"noopener\" aria-label=\"LinkedIn\"><svg viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M216,26H40A14,14,0,0,0,26,40V216a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V40A14,14,0,0,0,216,26Zm2,190a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V40a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM94,112v64a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0Zm88,28v36a6,6,0,0,1-12,0V140a22,22,0,0,0-44,0v36a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0v2.11A34,34,0,0,1,182,140ZM98,84A10,10,0,1,1,88,74,10,10,0,0,1,98,84Z\"/></svg></a></div>"
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "17f7204",
+         "elType": "widget",
+         "widgetType": "toggle",
+         "isInner": false,
+         "settings": {
+          "tabs": [
+           {
+            "_id": "5426388",
+            "tab_title": "Impressum",
+            "tab_content": "<p><strong>Anncathrin Laudenberg Architektur</strong><br>Anncathrin Laudenberg<br>Abtshöhe 7<br>51491 Overath</p>\n          <p>Telefon 0157 89195072<br>E-Mail info@laudenberg-architektur.de</p>\n          <p>Berufsbezeichnung: Architektin, verliehen in der Bundesrepublik Deutschland. Zuständige Kammer: Architektenkammer Nordrhein-Westfalen, Zollhof 1, 40221 Düsseldorf, www.aknw.de. Berufsrechtliche Regelungen: Baukammerngesetz Nordrhein-Westfalen (BauKaG NRW) und die darauf beruhenden Satzungen der Architektenkammer NRW, einsehbar auf der Website der Architektenkammer NRW.</p>\n          <p>Berufshaftpflichtversicherung: ERGO Versicherung AG, Victoriaplatz 2, 40477 Düsseldorf. Räumlicher Geltungsbereich: Europa, gemäß den vereinbarten Versicherungsbedingungen.</p>\n          <p>Umsatzsteuer-Identifikationsnummer nach § 27a UStG: DE368337002</p>\n          <p>Verantwortlich nach § 18 Abs. 2 MStV: Anncathrin Laudenberg, Anschrift wie oben.</p>\n          <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>"
+           }
+          ],
+          "selected_icon": {
+           "value": "",
+           "library": ""
+          },
+          "selected_active_icon": {
+           "value": "",
+           "library": ""
+          },
+          "border_width": {
+           "unit": "px",
+           "size": 0,
+           "sizes": []
+          },
+          "title_background": "",
+          "title_color": "#6B6E6E",
+          "tab_active_color": "#141515",
+          "title_typography_typography": "custom",
+          "title_typography_font_family": "Geist Mono",
+          "title_typography_font_size": {
+           "unit": "px",
+           "size": 11.5,
+           "sizes": []
+          },
+          "title_typography_font_weight": "400",
+          "title_typography_letter_spacing": {
+           "unit": "px",
+           "size": 0.6,
+           "sizes": []
+          },
+          "title_typography_text_transform": "uppercase",
+          "content_color": "#3A3D3D",
+          "content_typography_typography": "custom",
+          "content_typography_font_family": "Archivo",
+          "content_typography_font_size": {
+           "unit": "px",
+           "size": 14,
+           "sizes": []
+          },
+          "content_typography_font_weight": "400",
+          "content_typography_line_height": {
+           "unit": "em",
+           "size": 1.6,
+           "sizes": []
+          },
+          "_css_classes": "lbw-toggle"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "9489b1f",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "120",
+       "left": "120",
+       "isLinked": false
+      },
+      "flex_gap": {
+       "unit": "px",
+       "size": 0,
+       "column": "0",
+       "row": "0",
+       "isLinked": true
+      },
+      "flex_direction": "column",
+      "flex_justify_content": "flex-end",
+      "width": {
+       "unit": "%",
+       "size": 42,
+       "sizes": []
+      },
+      "width_tablet": {
+       "unit": "%",
+       "size": 100,
+       "sizes": []
+      },
+      "min_height": {
+       "unit": "vh",
+       "size": 100,
+       "sizes": []
+      },
+      "min_height_tablet": {
+       "unit": "vh",
+       "size": 34,
+       "sizes": []
+      },
+      "min_height_mobile": {
+       "unit": "vh",
+       "size": 26,
+       "sizes": []
+      },
+      "background_background": "classic",
+      "background_color": "#141515",
+      "padding_tablet": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "48",
+       "left": "48",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "28",
+       "left": "28",
+       "isLinked": false
+      },
+      "overflow": "hidden"
+     },
+     "elements": [
+      {
+       "id": "463de31",
+       "elType": "widget",
+       "widgetType": "html",
+       "isInner": false,
+       "settings": {
+        "html": "<div class=\"lbw-mark\" aria-hidden=\"true\"><svg viewBox=\"0 0 480 300\"><path d=\"M10 290 125 25l113 263h232\"/></svg></div>"
+       },
+       "elements": []
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "page_settings": {
+  "template": "elementor_canvas",
+  "background_background": "classic",
+  "background_color": "#F3F4F3"
+ }
+}
