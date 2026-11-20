@@ -1,0 +1,114 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wartung</title><style>@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(/assets/fonts/archivo-latin-standard-normal.woff2) format("woff2-variations");
+  unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(/assets/fonts/archivo-latin-ext-standard-normal.woff2) format("woff2-variations");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(/assets/fonts/geist-mono-latin-wght-normal.woff2) format("woff2-variations");
+} body{margin:0}</style></head><body><!-- Wartungsseite Anncathrin Laudenberg Architektur
+     Einsetzen: neue Seite, Vorlage "Elementor Canvas", ein HTML-Widget, diesen Code komplett einfügen.
+     Schriften: Archivo und Geist Mono über Elementor > Benutzerdefinierte Schriftarten hochladen (Ordner fonts). -->
+<style>
+.lbw{--ink:#141515;--paper:#f3f4f3;--muted:#6b6e6e;--line:rgba(20,21,21,.16);--sans:"Archivo","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;
+  position:relative;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);min-height:100vh;min-height:100dvh;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;margin:0}
+.lbw *,.lbw *::before,.lbw *::after{box-sizing:border-box;margin:0;padding:0}
+.lbw a{color:inherit;text-decoration:none}
+.lbw__main{display:flex;flex-direction:column;justify-content:space-between;gap:56px;padding:clamp(24px,3.4vw,64px)}
+.lbw__brand{display:flex;align-items:center;gap:14px;width:max-content}
+.lbw__brand svg.m{width:46px;height:46px;flex:none}
+.lbw__brand svg.m rect{fill:var(--ink)}
+.lbw__brand svg.m path{fill:none;stroke:var(--paper);stroke-width:14}
+.lbw__brand svg.t{width:210px;height:auto;overflow:visible}
+.lbw__brand svg.t text{fill:var(--ink);font-family:var(--sans)}
+.lbw__brand .t1{font-size:11.6px;font-weight:500;letter-spacing:.02em}
+.lbw__brand .t2{font-size:23.5px;font-weight:300;letter-spacing:.08em}
+.lbw h1{font-size:clamp(2.6rem,1.2rem + 5.2vw,6.4rem);line-height:.95;letter-spacing:-.045em;font-weight:500;font-stretch:112%;max-width:15ch}
+.lbw__lead{margin-top:clamp(20px,2vw,32px);max-width:44ch;font-size:clamp(1.02rem,.95rem + .3vw,1.2rem);line-height:1.55;color:#3a3d3d}
+.lbw__contact{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));gap:22px clamp(32px,5vw,88px);margin-top:clamp(32px,3.4vw,56px)}
+.lbw__contact span{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.lbw__contact a{font-size:clamp(1.1rem,1rem + .5vw,1.45rem);letter-spacing:-.01em;padding-bottom:4px;border-bottom:1px solid var(--line);transition:border-color .3s}
+.lbw__contact a:hover{border-color:var(--ink)}
+.lbw__foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.lbw__foot a:hover,.lbw__foot summary:hover{color:var(--ink)}
+.lbw__foot details{width:100%}
+.lbw__foot summary{cursor:pointer;list-style:none;width:max-content}
+.lbw__foot summary::-webkit-details-marker{display:none}
+.lbw__legal{margin-top:18px;max-width:62ch;font-family:var(--sans);font-size:.88rem;line-height:1.6;letter-spacing:0;text-transform:none;color:#3a3d3d;display:grid;gap:12px}
+.lbw__legal strong{font-weight:600;color:var(--ink)}
+.lbw__social{display:flex;gap:14px;margin-left:auto}
+.lbw__social svg{width:20px;height:20px;fill:currentColor;display:block}
+.lbw__side{position:relative;background:var(--ink);overflow:hidden}
+.lbw__side svg{position:absolute;left:12%;right:-6%;bottom:14%;width:94%;height:auto}
+.lbw__side path{fill:none;stroke:var(--paper);stroke-width:5}
+@media (prefers-reduced-motion:no-preference){
+  .lbw__side path{stroke-dasharray:1000;stroke-dashoffset:1000;animation:lbwDraw 2.2s cubic-bezier(.65,0,.35,1) .3s forwards}
+  .lbw__main>*{animation:lbwIn .9s cubic-bezier(.16,1,.3,1) both}
+  .lbw__main>*:nth-child(2){animation-delay:.12s}.lbw__main>*:nth-child(3){animation-delay:.24s}
+}
+@keyframes lbwDraw{to{stroke-dashoffset:0}}
+@keyframes lbwIn{from{opacity:0;transform:translateY(14px)}}
+@media (max-width:900px){
+  .lbw{grid-template-columns:1fr;grid-template-rows:auto 26vh}
+  .lbw__side{order:2}
+  .lbw__side svg{left:8%;width:70%;bottom:12%}
+  .lbw__contact{grid-template-columns:1fr}
+  .lbw__brand svg.t{width:170px}
+}
+</style>
+<div class="lbw">
+  <main class="lbw__main">
+    <a class="lbw__brand" href="/" aria-label="Anncathrin Laudenberg Architektur">
+      <svg class="m" viewBox="0 0 480 480" aria-hidden="true"><rect width="480" height="480"/><path d="M62 350 177 85l113 263h140"/></svg>
+      <svg class="t" viewBox="0 0 240 45" aria-hidden="true"><text class="t1" x="0" y="12.2" textLength="240" lengthAdjust="spacing">ANNCATHRIN LAUDENBERG</text><text class="t2" x="0" y="44.6" textLength="240" lengthAdjust="spacing">ARCHITEKTUR</text></svg>
+    </a>
+    <section aria-labelledby="lbw-title">
+      <h1 id="lbw-title">Die neue Website entsteht gerade.</h1>
+      <p class="lbw__lead">Hier geht bald die neue Website von Anncathrin Laudenberg Architektur online. Für Ihr Projekt bin ich schon jetzt persönlich erreichbar.</p>
+      <div class="lbw__contact">
+        <div><span>E-Mail</span><a href="mailto:info@laudenberg-architektur.de">info@laudenberg-architektur.de</a></div>
+        <div><span>Telefon</span><a href="tel:+4915789195072">0157 89195072</a></div>
+      </div>
+    </section>
+    <footer class="lbw__foot">
+      <span>Overath</span>
+      <a href="/datenschutzerklaerung/">Datenschutz</a>
+      <span class="lbw__social">
+        <a href="https://www.instagram.com/al_architektur/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/anncathrin-laudenberg-b22871449/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 256 256" aria-hidden="true"><path d="M216,26H40A14,14,0,0,0,26,40V216a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V40A14,14,0,0,0,216,26Zm2,190a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V40a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM94,112v64a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0Zm88,28v36a6,6,0,0,1-12,0V140a22,22,0,0,0-44,0v36a6,6,0,0,1-12,0V112a6,6,0,0,1,12,0v2.11A34,34,0,0,1,182,140ZM98,84A10,10,0,1,1,88,74,10,10,0,0,1,98,84Z"/></svg></a>
+      </span>
+      <details>
+        <summary>Impressum</summary>
+        <div class="lbw__legal">
+          <p><strong>Anncathrin Laudenberg Architektur</strong><br>Anncathrin Laudenberg<br>Abtshöhe 7<br>51491 Overath</p>
+          <p>Telefon 0157 89195072<br>E-Mail info@laudenberg-architektur.de</p>
+          <p>Berufsbezeichnung: Architektin, verliehen in der Bundesrepublik Deutschland. Zuständige Kammer: Architektenkammer Nordrhein-Westfalen, Zollhof 1, 40221 Düsseldorf, www.aknw.de. Berufsrechtliche Regelungen: Baukammerngesetz Nordrhein-Westfalen (BauKaG NRW) und die darauf beruhenden Satzungen der Architektenkammer NRW, einsehbar auf der Website der Architektenkammer NRW.</p>
+          <p>Berufshaftpflichtversicherung: ERGO Versicherung AG, Victoriaplatz 2, 40477 Düsseldorf. Räumlicher Geltungsbereich: Europa, gemäß den vereinbarten Versicherungsbedingungen.</p>
+          <p>Umsatzsteuer-Identifikationsnummer nach § 27a UStG: DE368337002</p>
+          <p>Verantwortlich nach § 18 Abs. 2 MStV: Anncathrin Laudenberg, Anschrift wie oben.</p>
+          <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        </div>
+      </details>
+    </footer>
+  </main>
+  <div class="lbw__side" aria-hidden="true">
+    <svg viewBox="0 0 480 300"><path d="M10 290 125 25l113 263h232"/></svg>
+  </div>
+</div>
+</body></html>
